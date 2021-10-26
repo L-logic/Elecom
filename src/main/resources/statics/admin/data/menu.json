@@ -1,0 +1,85 @@
+[
+	{
+		"id": "component",
+		"title": "首页",
+		"icon": "layui-icon layui-icon-component",
+		"type": 0,
+		"href": "",
+		"children": [
+			{
+				"id": 10,
+				"title": "首页",
+				"icon": "layui-icon layui-icon-console",
+				"type": 1,
+				"openType": "_iframe",
+				"href": "view/main/index.html"
+			}
+		]
+	},
+	{
+		"id": 1,
+		"title": "理论学习",
+		"icon": "layui-icon layui-icon-console",
+		"type": 0,
+		"href": "",
+		"children": [{
+			"id": 202,
+			"title": "视频学习",
+			"icon": "layui-icon layui-icon-console",
+			"type": 1,
+			"openType": "_iframe",
+			"href": "view/learn/video.html"
+		},{
+			"id": 204,
+			"title": "文字学习",
+			"icon": "layui-icon layui-icon-console",
+			"type": 1,
+			"openType": "_iframe",
+			"href": "view/learn/text.html"
+		},{
+			"id": 205,
+			"title": "笔记本",
+			"icon": "layui-icon layui-icon-console",
+			"type": 1,
+			"openType": "_iframe",
+			"href": "view/learn/note.html"
+		}]
+	},
+	{
+		"id": "result",
+		"title": "模型测试",
+		"icon": "layui-icon layui-icon-auz",
+		"type": 0,
+		"href": "",
+		"children": [{
+			"id": 301,
+			"title": "模型测试",
+			"icon": "layui-icon layui-icon-console",
+			"type": 1,
+			"openType": "_iframe",
+			"href": "view/model/save.html"
+		}]
+	},
+	{
+		"id": "error",
+		"title": "考试检测",
+		"icon": "layui-icon layui-icon-face-cry",
+		"type": 0,
+		"href": "",
+		"children": [{
+			"id": 401,
+			"title": "考试检测",
+			"icon": "layui-icon layui-icon-console",
+			"type": 1,
+			"openType": "_iframe",
+			"href": "view/order/viewAll.html"
+		},{
+			"id": 402,
+			"title": "数据分析",
+			"icon": "layui-icon layui-icon-console",
+			"type": 1,
+			"openType": "_iframe",
+			"href": "view/console/console1.html"
+		}]
+	}
+]
