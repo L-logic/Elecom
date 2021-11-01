@@ -15,7 +15,7 @@ body{font-family: "Microsoft YaHei", "SimSun", '\5b8b\4f53', sans-serif;  -moz-u
 i{font-style: normal;}
 
 /*site-nav*/
-.site-nav-bg{height: 100px; line-height: 30px; background-color: #040176;}
+.site-nav-bg{height: 100px; line-height: 30px; background-color: #B76CFD;}
 .site-nav{position: relative;font-size: 30px}
 .sn-quick-menu{position: absolute; left: 20px;}
 .sn-quick-menu div{float: left;}
@@ -30,9 +30,9 @@ i{font-style: normal;}
 .header{height: 100px; line-height: 100px;}
 .header .mallLogo{margin-left: 38px; float: left;}
 .header .mallSearch{float: right; width: 500px; padding-top: 30px; position: relative;}
-.header .mallSearch form{height: 38px; line-height: 38px; border-width: 1px 0 1px 1px; border: solid #040176; position: relative;}
+.header .mallSearch form{height: 38px; line-height: 38px; border-width: 1px 0 1px 1px; border: solid #B76CFD; position: relative;}
 .header .mallSearch h1{height: 38px; line-height: 38px; width: 436px; float: right; border:none; position: relative; z-index: 2; background: none;}
-.header .mallSearch button{width: 58px; height: 38px; line-height: 38px; float: left; background: #040176; border-radius:0
+.header .mallSearch button{width: 58px; height: 38px; line-height: 38px; float: left; background: #B76CFD; border-radius:0
 ;}
 /*end-header*/
 
@@ -40,9 +40,9 @@ i{font-style: normal;}
 .content .inner-cont1{height: 36px; line-height: 36px;}
 .content .inner-cont2{padding-left: 208px;}
 .content .inner-cont2 a{display: inline-block; font-size: 14px; color:#010101; padding: 0 32px; line-height: 36px; float: left;}
-.content .inner-cont2 a.active,.content .inner-cont2 a:hover{color: #040176;}
+.content .inner-cont2 a.active,.content .inner-cont2 a:hover{color: #B76CFD;}
 .content .category-con{position: relative; height: 400px; width: 100%;}
-.content .category-con .category-type{width: 180px; height:36px; line-height: 36px; font-size: 14px; background: #040176; text-align: center; color: #fff; cursor: pointer; margin-top: -36px; position: absolute; z-index: 100;}
+.content .category-con .category-type{width: 180px; height:36px; line-height: 36px; font-size: 14px; background: #B76CFD; text-align: center; color: #fff; cursor: pointer; margin-top: -36px; position: absolute; z-index: 100;}
 .content .category-con .category-type h3{font-size: 14px;}
 .content .category-tab-content .nav-con{width: 180px; height: 0;}
 .content .category-tab-content .nav-con .normal-nav{height: 400px; padding: 13px 0px 17px 5px; box-sizing: border-box; position: relative; background: #fff; border-bottom: 1px solid #e9e9e9; box-sizing: border-box;}
@@ -101,8 +101,8 @@ i{font-style: normal;}
 .content .product-list-box .product-list-cont .product-item-box .list-item p{padding:0 26px; text-align: left; line-height: 20px; margin-bottom: 14px;}
 .content .product-list-box .product-list-cont .product-item-box{width: 1210px;}
 .content .product-list-box .product-list-cont .product-item-box .list-item span{color: #ee0000;}
-.footer{background: #040176; padding-bottom: 54px;}
-.footer .ng-promise-box{border-bottom:1px solid #040176; line-height: 145px;}
+.footer{background: #B76CFD; padding-bottom: 54px;}
+.footer .ng-promise-box{border-bottom:1px solid #B76CFD; line-height: 145px;}
 .footer .ng-promise-box .ng-promise{padding-left: 100px; box-sizing: border-box;}
 .footer .ng-promise-box .ng-promise p a{ color: #fff; font-size: 20px; margin-right: 210px; padding-left: 44px; height: 40px; display: inline-block; line-height: 40px; background: url(../img/us-icon.png) no-repeat left 0;}
 .footer .ng-promise-box .ng-promise p a.icon2{padding-left: 56px; background-position:0 -44px;}
@@ -113,7 +113,7 @@ i{font-style: normal;}
 .footer .mod_help p span{padding:0 22px;}
 
 
-.content-nav-base .main-nav{border-bottom:1px solid #040176;}
+.content-nav-base .main-nav{border-bottom:1px solid #B76CFD;}
 .content-nav-base .main-nav .inner-cont2{padding-left: 40px;}
 .content-nav-base .main-nav .inner-cont2 a{padding:0; margin-right: 75px;}
 
@@ -127,7 +127,7 @@ i{font-style: normal;}
 .commodity-content .commod-cont-wrap{background: #f8f8f8; padding: 50px 0 90px 0;}
 .commodity-content .commod-cont .left-nav{width: 200px; line-height: 38px; background: #fff; float: left; margin-right: 58px;}
 .commodity-content .commod-cont .left-nav .list-box{border:1px solid #eeeeee;}
-.commodity-content .commod-cont .left-nav .title{color: #fff; font-size: 16px; background: #040176; text-align: center;}
+.commodity-content .commod-cont .left-nav .title{color: #fff; font-size: 16px; background: #B76CFD; text-align: center;}
 .commodity-content .commod-cont .left-nav .list-box dt,.commodity-content .commod-cont .left-nav .list-box dd{border-bottom:1px dashed #eeeeee; cursor: pointer;}
 .commodity-content .commod-cont .left-nav .list-box dd:hover a{color:#ff5500;}
 .commodity-content .commod-cont .left-nav .list-box dt{font-size: 14px; color: #333; padding-left: 30px; background: url(../img/off-icon.png) 8px -2px no-repeat; cursor: pointer;}
@@ -137,13 +137,13 @@ i{font-style: normal;}
 .commodity-content .commod-cont .right-cont-wrap{float:  left; width: 940px;}
 .commodity-content .commod-cont .right-cont{width: 1000px;}
 .commodity-content .commod-cont .right-cont .sort{margin-top: 5px;}
-.commodity-content .commod-cont .right-cont .sort a{width: 58px; height: 26px; line-height: 26px; font-size: 14px; color: #040176; border:1px solid #eaeaea; margin-left: -1px; float: left; background: #fff; background:#fff url(../img/sort-arrow.png) no-repeat 41px 0; text-indent: 9px;}
+.commodity-content .commod-cont .right-cont .sort a{width: 58px; height: 26px; line-height: 26px; font-size: 14px; color: #B76CFD; border:1px solid #eaeaea; margin-left: -1px; float: left; background: #fff; background:#fff url(../img/sort-arrow.png) no-repeat 41px 0; text-indent: 9px;}
 .commodity-content .commod-cont .right-cont .sort a.active{background-position: 41px -26px;}
 .commodity-content .commod-cont .right-cont .prod-number{line-height: 44px; font-size: 16px; padding-left: 7px;}
 .commodity-content .commod-cont .right-cont .cont-list .item{float: left; width: 280px; height: 366px; border:1px solid #eaeaea; background: #fff; margin:0 47px 60px 0;}
 .commodity-content .commod-cont .right-cont .cont-list .item .img{border-bottom: 1px solid #eaeaea}
 .commodity-content .commod-cont .right-cont .cont-list .item .text{padding:14px 0 0 14px;}
-.commodity-content .commod-cont .right-cont .cont-list .title{color: #040176; font-size: 16px; margin-bottom: 14px;}
+.commodity-content .commod-cont .right-cont .cont-list .title{color: #B76CFD; font-size: 16px; margin-bottom: 14px;}
 .commodity-content .commod-cont .right-cont .cont-list .price{position: relative;}
 .commodity-content .commod-cont .right-cont .cont-list .pri{color: #ee0000;}
 .commodity-content .commod-cont .right-cont .cont-list .nub{position: absolute; right: 13px; color:#999999;}
@@ -224,7 +224,7 @@ i{font-style: normal;}
 .buytoday-content .product-list .tab-title{padding:60px 0 66px 0;}
 .buytoday-content .product-list .tab-title a{line-height: 56px; color: #666666; font-size: 20px; display: inline-block;}
 .buytoday-content .product-list .tab-title a.tuang{margin-right: 70px;}
-.buytoday-content .product-list .tab-title a.active{color: #457ae0; border-bottom: 2px solid #040176;}
+.buytoday-content .product-list .tab-title a.active{color: #457ae0; border-bottom: 2px solid #B76CFD;}
 .buytoday-content .list-cont .item{width: 290px; height: 420px; float: left; margin:0 12px 20px 0; text-align: left; background: #fff;}
 .buytoday-content .list-cont .item-box{width: 1220px; padding-bottom: 30px;}
 .buytoday-content .list-cont .item .text-box{ padding:12px; box-sizing: border-box;}
@@ -287,11 +287,11 @@ i{font-style: normal;}
 .login-content .login-bg .login-cont .iphone .layui-input{padding-left: 40px;}
 .login-content .login-bg .login-cont .veri-code .layui-btn{width: 102px; background: #eeeeee; text-align: center; color: #333; height: 36px; line-height: 36px; display: inline-block; border:none; cursor: pointer; position: absolute; top: 1px; right: 1px; font-size: 12px; padding:0 14px;}
 .login-content .login-bg .login-cont .login-btn .layui-input-block{margin-left: 0; padding-top: 25px;}
-.login-content .login-bg .login-cont .login-btn .layui-input-block button{width: 100%; background: #040176; font-size: 18px;}
+.login-content .login-bg .login-cont .login-btn .layui-input-block button{width: 100%; background: #B76CFD; font-size: 18px;}
 /*end-login*/
 
 /*account*/
-.login-content2 .login-bg{width: 100%;background-color: #040176}
+.login-content2 .login-bg{width: 100%;background-color: #B76CFD}
 .login-content2 .login-bg .login-cont{ height: 772px; position: relative;}
 .login-content2 .login-bg .login-cont .form-box{width: 1000px; height: 500px; border:1px solid #d9dadc; background: #fff; position: absolute; right: 90px; padding:0 30px;}
 .login-content2 .login-bg .login-cont .form-box legend{font-size: 20px; color: #323232; text-align: center; padding:50px 0;}
@@ -301,7 +301,7 @@ i{font-style: normal;}
 .login-content2 .login-bg .login-cont .iphone .layui-input{padding-left: 40px;}
 .login-content2 .login-bg .login-cont .veri-code .layui-btn{width: 102px; background: #eeeeee; text-align: center; color: #333; height: 36px; line-height: 36px; display: inline-block; border:none; cursor: pointer; position: absolute; top: 1px; right: 1px; font-size: 12px; padding:0 14px;}
 .login-content2 .login-bg .login-cont .login-btn .layui-input-block{margin-left: 0; padding-top: 25px;}
-.login-content2 .login-bg .login-cont .login-btn .layui-input-block button{width: 100%; background: #040176; font-size: 18px;}
+.login-content2 .login-bg .login-cont .login-btn .layui-input-block button{width: 100%; background: #B76CFD; font-size: 18px;}
 /*end-account*/
 
 
@@ -339,7 +339,7 @@ i{font-style: normal;}
 .shopcart-content .order-content .th-op span{display: block; cursor: pointer; line-height: 24px;}
 .shopcart-content .order-content .th-item .item-cont img{float: left; width: 98px; height: 98px;  border:1px solid #ececee; margin-right: 20px;}
 .shopcart-content .order-content .th-item .item-cont .text{text-align: left; line-height: 24px;}
-.shopcart-content .order-content .th-item .item-cont .text .title{color: #040176;}
+.shopcart-content .order-content .th-item .item-cont .text .title{color: #B76CFD;}
 .shopcart-content .order-content .th-item .item-cont .text p{color: #888;}
 .shopcart-content .FloatBarHolder{line-height: 78px; border:1px solid #ececee; background: #f5f5f5; position: relative;}
 .shopcart-content .FloatBarHolder .th-chk {width: 150px;}

@@ -1,21 +1,39 @@
-.layui-form {
-	width: 320px !important;
-	margin: auto !important;
-	margin-top: 160px !important;
+#web_bg{
+	position:fixed;
+	top: 0;
+	left: 0;
+	width:100%;
+	height:100%;
+	min-width: 1000px;
+	z-index:-10;
+	zoom: 1;
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-o-background-size: cover;
+	background-position: center 0;
 }
-
+.layui-form {
+	position:relative;
+	left: 150px;
+	top: 130px;
+	width: 550px !important;
+}
 .layui-form button {
-	width: 100% !important;
-	height: 44px !important;
+	width: 20% !important;
+	height: 64px !important;
 	line-height: 44px !important;
 	font-size: 16px !important;
-	background-color: #040176 !important;
+	background-color: #B76CFD !important;
 	font-weight: 550 !important;
+	border-bottom-right-radius: 100px;
+	border-top-right-radius: 100px;
 }
 
 .layui-form-checked[lay-skin=primary] i {
-	border-color: #040176 !important;
-	background-color: #00669e !important;
+	border-color: #B76CFD !important;
+	background-color: #c792f8 !important;
 	color: #fff !important;
 }
 
@@ -30,18 +48,22 @@
 }
 
 .layui-input {
-	height: 44px !important;
+	float: left;
+	width: 80%;
+	height: 64px !important;
 	line-height: 44px !important;
 	padding-left: 15px !important;
-	border-radius: 3px !important;
+	border-bottom-left-radius: 100px;
+	border-top-left-radius: 100px;
+	border-color: #B76CFD;
 }
 
 .layui-input:focus {
-	box-shadow: 0px 0px 2px 1px #040176 !important;
+	box-shadow: 0px 0px 2px 1px #B76CFD !important;
 }
 
 .layui-form-danger:focus{
-	box-shadow: 0px 0px 2px 1px #f56c6c !important;
+	box-shadow: 0px 0px 2px 1px #d2adf3 !important;
 }
 
 .logo {
