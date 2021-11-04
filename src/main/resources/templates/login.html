@@ -2,34 +2,60 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<title>Login Page</title>
 		<!-- 样 式 文 件 -->
-		<link rel="stylesheet" href="../statics/component/pear/css/pear.css" />
-		<link rel="stylesheet" href="../statics/admin/css/other/login.css" />
+		<link rel="stylesheet" href="../static/component/pear/css/pear.css" />
+		<link rel="stylesheet" href="../static/admin/css/other/login.css" />
+		<!-- 布 局 样 式 -->
+		<link rel="stylesheet" href="../static/admin/css/admin.css" />
 	</head>
     <!-- 代 码 结 构 -->
-	<body background="../statics/admin/images/welcome.gif" id="web_bg">
+	<body class="layui-layout-body pear-admin" background="../static/admin/images/welcome.gif" id="web_bg">
+		<div class="layui-layout layui-layout-admin">
+			<div class="layui-header" style="height: 60px;background-color: #23262E;">
+				<!-- 顶 部 左 侧 功 能 -->
+				<ul class="layui-nav layui-layout-left">
+					<li class="layui-nav-item"><img src="../static/admin/images/logo.png"/></li>
+					<li class="layui-nav-item"><a href="#">首页</a></li>
+				</ul>
+				<!-- 多 系 统 菜 单 -->
+				<div id="control" class="layui-layout-control"></div>
+				<!-- 顶 部 右 侧 菜 单 -->
+				<ul class="layui-nav layui-layout-right">
+					<li class="layui-nav-item layui-hide-xs"><a href="#" class="fullScreen layui-icon layui-icon-screen-full"></a></li>
+					<li class="layui-nav-item layui-hide-xs"><a href="http://www.pearadmin.com" class="layui-icon layui-icon-website"></a></li>
+					<li class="layui-nav-item layui-hide-xs message"></li>
+					<!-- 主 题 配 置 -->
+					<li class="layui-nav-item setting"><a href="#" class="layui-icon layui-icon-more-vertical"></a></li>
+				</ul>
+			</div>
+			<div class="pear-cover"></div>
+			<!-- 加 载 动 画-->
+			<div class="loader-main">
+				<div class="loader"></div>
+			</div>
+		</div>
+		<!-- 移 动 端 便 捷 操 作 -->
+		<div class="pear-collasped-pe collaspe">
+			<a href="#" class="layui-icon layui-icon-shrink-right"></a>
+		</div>
 		<form class="layui-form" action="javascript:void(0);">
 			<div class="layui-form-item">
 				<input placeholder="在此输入关键词" lay-verify="required" hover class="layui-input"  /><button type="button" class="pear-btn pear-btn-success login" lay-submit lay-filter="login">搜索</button>
 			</div>
 		</form>
 		<!-- 资 源 引 入 -->
-		<script src="../statics/component/layui/layui.js"></script>
-		<script src="../statics/component/pear/pear.js"></script>
+		<script src="../static/component/layui/layui.js"></script>
+		<script src="../static/component/pear/pear.js"></script>
 		<script>
 			layui.use(['form', 'button', 'popup'], function() {
 				var form = layui.form;
 				var button = layui.button;
 				var popup = layui.popup;
-				
+
                 // 登 录 提 交
 				form.on('submit(login)', function(data) {
-					
-					/// 验证
-					
-					/// 登录
-					
 					/// 动画
 					button.load({
 						elem: '.login',
@@ -42,6 +68,34 @@
 					})
 					return false;
 				});
+			})
+		</script>
+		<!-- 依 赖 脚 本 -->
+		<script src="../static/component/layui/layui.js"></script>
+		<script src="../static/component/pear/pear.js"></script>
+		<!-- 框 架 初 始 化 -->
+		<script>
+			layui.use(['admin','jquery','convert','popup'], function() {
+				var admin = layui.admin;
+				var $ = layui.jquery;
+				var convert = layui.convert;
+				var popup = layui.popup;
+
+				admin.setAvatar("../static/admin/images/avatar.jpg","就眠仪式");
+
+				admin.setConfigType("yml");
+				admin.setConfigPath("../static/config/pear.config.yml");
+
+				admin.render();
+
+				// 登出逻辑
+				admin.logout(function(){
+					popup.success("注销成功",function(){
+						location.href = "login.html";
+					})
+					return true;
+				})
+				admin.message();
 			})
 		</script>
 	</body>

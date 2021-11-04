@@ -2,7 +2,7 @@
 ## 网站配置
 logo: 
   ## 网站名称
-  title: "Medical"
+  title: "CompKey"
   ## 网站图标
   image: "../admin/images/logo.png"
 ## 菜单配置
@@ -36,7 +36,7 @@ tab:
   ## 首页
   index: 
     id: "10" ## 标识 ID , 建议与菜单项中的 ID 一致
-    href: "view/main/index.html" ## 页面地址
+    href: "login.html" ## 页面地址
     title: "首页" ## 标题
 ## 主题配置
 theme: 
@@ -57,7 +57,7 @@ colors:
 - id: "4"
   color: "#f56c6c"
 - id: "5"
-  color: "#3963bc"
+  color: "#c792f8"
 ## 主题面板的链接列表
 links: 
 - icon: "layui-icon layui-icon-website"
@@ -81,4 +81,4 @@ other:
 ## 头部配置
 header:
   ## 站内消息，通过 false 设置关闭
-  message: "admin/data/message.json"
+  message: "../admin/data/message.json"

@@ -15,10 +15,10 @@
 	background-position: center 0;
 }
 .layui-form {
-	position:relative;
+	position:fixed;
 	left: 150px;
-	top: 130px;
-	width: 550px !important;
+	top: 150px;
+	width: 620px !important;
 }
 .layui-form button {
 	width: 20% !important;
