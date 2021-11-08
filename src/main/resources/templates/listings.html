@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../static/css/rangeslider.css">
 
     <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/component/pear/css/pear.css" />
     
   </head>
   <body>
@@ -87,8 +88,15 @@
           </div>
         </div>
       </div>
-    </div>  
-    
+    </div>
+
+    <div class="site-section bg-light">
+      <div class="layui-card">
+        <div class="layui-card-body">
+          <table id="test" lay-filter="test"></table>
+        </div>
+      </div>
+    </div>
 
     <div class="site-section bg-light">
       <div class="container">
@@ -171,12 +179,26 @@
                 <h3><a href="#">Live Band</a></h3>
                 <p>Don St, Brooklyn, New York</p>
                 <p>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-warning"></span>
-                  <span class="icon-star text-secondary"></span>
-                  <span>(22 Reviews)</span>
+<!--                  thyme leaf实现星星打分-->
+<!--                <div class=" layui-col-md2 " th:id="'a'+${comments.getId()}" style=""></div>-->
+<!--                  <script>-->
+<!--                    layui.use('rate', function () {-->
+<!--                      var rate = layui.rate;-->
+<!--                      var ins1 = rate.render({-->
+<!--                        elem: a[[${comments.getId()}]]       //绑定元素（＋a解决不能为全数字）-->
+<!--                        , length: 5            //星星个数-->
+<!--                        , value: [[${comments.getGrade()}]]    //初始化值-->
+<!--                        , theme: ' gold'     //颜色-->
+<!--                        , half: true           //支持半颗星-->
+<!--                        , text: true           //显示文本-->
+<!--                        , readonly: true      //只读-->
+<!--                        //自定义文本，点击后文本显示的内容-->
+<!--                        , setText: function () {-->
+<!--                          this.span.text([[${comments.getGrade()}]]+'.0')-->
+<!--                        }-->
+<!--                      });-->
+<!--                    });-->
+<!--                  </script>-->
                 </p>
 
                 
@@ -508,6 +530,104 @@
   <script src="../static/js/rangeslider.min.js"></script>
   
   <script src="../static/js/main.js"></script>
-  
+  <script src="../static/component/layui/layui.js"></script>
+  <script src="../static/component/pear/pear.js"></script>
+  <script>
+    layui.use(['table', 'form', 'jquery', 'drawer', 'dropdown','rate'], function() {
+      let table = layui.table,
+              layer = layui.layer,
+              rate  =layui.rate;
+      let form = layui.form;
+      let $ = layui.jquery;
+      let drawer = layui.drawer;
+      let dropdown = layui.dropdown;
+
+      let MODULE_PATH = "/system/user/";
+
+      let cols = [
+        [
+          {
+            title: '序列',
+            field: 'sequence',
+            align: 'center',
+            width: 80
+          },
+          {
+            title: '竞争关键字',
+            field: 'keyWord',
+            align: 'center',
+            width: 100
+          },
+          {
+            title: '中介关键字',
+            field: 'midKey',
+            align: 'center'
+          },
+          {
+            title: '竞争度',
+            field: 'competitive',
+            align: 'center',
+          },
+          {
+            title: '满意度',
+            field: 'satisfaction',
+            align: 'center',
+            sort:true,
+            id:'rate',
+            templet: function (d) {
+              //在设置星级的列中用templet函数转义，其中d.id代表该行的id值.第一行的评分的id=start1，第二行的评分的id=star2.....用在后面循环赋值。很重要！
+              return '<div id="star'+d.sequence+'" style="font-size: 13px;"></div>'
+            }
+          }
+        ]
+      ]
+
+      table.render({
+        elem: '#test',//注意这个值
+        id:"AnswerReload",//table的id值
+        url: '../static/admin/data/table.json',
+        // where: { question_id: question_id,//请求参数 }
+        // method: 'post',//请求方式
+        // contentType: "application/json;charset=utf-8",//数据类型
+        // url: 'http://192.168.*.*:8000/******/',//后台数据接口
+        // // toolbar: '#toolbarDemo',
+        // jump: function(obj){
+        //     console.log(obj)
+        // },
+        cols:cols,
+        //回调函数，在里面设置rate.render(),给rate循环赋值
+        done:function(res){
+          var data = res.data;//返回的json中data数据
+          table_data = data;//全局变量，用在后面排序，与这个循环无关。
+          for (var item in data) {
+            //星级
+            rate.render({//循环设置评分
+              elem: '#star'+data[item].sequence+''//给不同的id的rate绑定不同的值
+              , length: 5            //星星个数
+              , value: data[item].satisfaction      //初始化值
+              , theme: '#009688'     //颜色
+              , half: true           //支持半颗星
+              , text: false           //显示文本，默认显示 '3.5星'
+              // , readonly: true      //只读
+            });
+
+          };
+        }
+      });
+
+      table.on('tool(tableList)', function (obj) {
+        var data = obj.data; //获得当前行数据
+        var layEvent = obj.event; //获得 lay-event 对应的值
+        var tr = obj.tr; //获得当前行 tr 的DOM对象
+        if (layEvent == 'detail') {
+          common.cmsLayOpen('查看', "/Page.aspx?Id=" + data.Id, '100%', '100%'); //点击某一列打开新的页面
+        }
+      });
+
+      window.refresh = function(param) {
+        table.reload('user-table');
+      }
+    })
+  </script>
   </body>
 </html>
