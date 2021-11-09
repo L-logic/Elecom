@@ -22,7 +22,10 @@ layui.use(['echarts'], function() {
 		},
 		toolbox: {
 			feature: {
-				saveAsImage: {}
+				dataView: { show: true, readOnly: false },
+				magicType: { show: true, type: ['line', 'bar'] },
+				restore: { show: true },
+				saveAsImage: { show: true }
 			}
 		},
 		grid: {
@@ -33,6 +36,7 @@ layui.use(['echarts'], function() {
 		},
 		xAxis: [
 			{
+				name: '数据量',
 				type: 'category',
 				boundaryGap: false,
 				data: ['5M', '10M', '15M', '20M', '25M', '30M']
@@ -40,6 +44,7 @@ layui.use(['echarts'], function() {
 		],
 		yAxis: [
 			{
+				name: '运行时间',
 				type: 'value'
 			}
 		],

@@ -5,6 +5,41 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script>
+      $(function (){
+        var $form = $("#father")
+        var count = 0
+        $("#adddd").bind('click',function (){
+          console.log("hhhhhhhh")
+          count++
+          var son = $("<div class=\"col-lg-12 col-xl-4 no-sm-border border-right\" style=\"margin-left: 14%;width: 40%\">\n" +
+                  "                    </div>")
+          var sonson = $("<input type=\"text\" class=\"form-control\" placeholder=\"请在此输入关键字\">")
+          sonson.attr("name","word"+count)
+          son.append(sonson)
+          $form.prepend(son)
+        })
+        $.ajax({
+          //url
+          url: 'http://localhost:8888/',
+          //请求参数
+          data: {
+            count: count
+          },
+          //请求类型
+          type: 'GET',
+          //成功的回调，data参数返回的的是服务器传来的数据
+          success: function(data){
+            console.log("成功。。。。。");
+          },
+          //失败的回调
+          error: function(){
+            console.log("出错了。。。。。。。");
+          }
+        })
+      })
+    </script>
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
 
     <link rel="stylesheet" href="fonts/icomoon/style.css">
@@ -69,7 +104,7 @@
 
   
 
-    <div class="site-blocks-cover overlay" style="background-image: url(images/hero_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+    <div class="site-blocks-cover overlay" style="background-image: url(images/bg2.png);" data-aos="fade" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row align-items-center justify-content-center text-center">
 
@@ -78,7 +113,7 @@
             
             <div class="row justify-content-center mb-4">
               <div class="col-md-10 text-center">
-                <h1 data-aos="fade-up">搜索任意您想要 <span class="typed-words"></span></h1>
+                <h1 data-aos="fade-up">Find Keyword <span class="typed-words"></span></h1>
                 <p data-aos="fade-up" class=" w-75 mx-auto">关键词广告是一类重要的互联网广告形式，关键词推荐成为了一种重要的支持广告主决策的方法，竞争性关键字推荐能达到抢占竞争对手市场的更好广告效果</p>
               </div>
             </div>
@@ -114,11 +149,62 @@
           </div>
         </div>
       </div>
-    </div>  
+    </div>
 
-    
-    
-      
+
+
+
+    <div class="site-section">
+    <div class="container">
+      <div class="row justify-content-center mb-5">
+        <div class="col-md-7 text-center border-primary">
+          <h2 class="font-weight-light text-primary">多关键字搜索</h2>
+          <p class="color-black-opacity-5">Lorem Ipsum Dolor Sit Amet</p>
+        </div>
+      </div>
+
+
+      <div class="row justify-content-center">
+        <div class="col-8">
+          <div class="border p-3 rounded mb-2">
+            <a data-toggle="collapse" href="#collapse-1" class="accordion-item h5 d-block mb-0">在此处您可以一次性输入多个种子关键字进行查询</a>
+
+            <div class="collapse show" id="collapse-1">
+              <div class="pt-2">
+                <button id="adddd" class="btn text-white btn-primary">新增</button>
+                <form action="listings.html" id="father">
+                  <div class="row align-items-center">
+                    <div class="col-lg-12 col-xl-4 no-sm-border border-right" style="margin-left: 15%">
+                      <input type="text" class="form-control" placeholder="请在此输入关键字" name="word">
+                    </div>
+                    <div class="col-lg-12 col-xl-3">
+                      <div class="select-wrap">
+                        <span class="icon"><span class="icon-keyboard_arrow_down"></span></span>
+                        <select class="form-control" name="" id="">
+                          <option value="">所有数据</option>
+                          <option value="">搜狗数据</option>
+                          <option value="">百度数据</option>
+                          <option value="">谷歌数据</option>
+                          <option value="">火狐数据</option>
+                          <option value="">360数据</option>
+                          <option value="">有道数据</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 col-xl-2 ml-auto text-right">
+                    <input type="submit" class="btn text-white btn-primary" value="提交">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
     
     <div class="site-section" data-aos="fade">
       <div class="container">
