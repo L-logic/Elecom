@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>CompetitiveKeywords</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../static/fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="../../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/css/magnific-popup.css">
+    <link rel="stylesheet" href="../../static/css/jquery-ui.css">
+    <link rel="stylesheet" href="../../static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../../static/css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="../../static/css/bootstrap-datepicker.css">
+
+    <link rel="stylesheet" href="../../static/fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="../../static/css/aos.css">
+    <link rel="stylesheet" href="../../static/css/rangeslider.css">
+
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/component/pear/css/pear.css" />
+
+</head>
+<body>
+
+<div class="site-wrap">
+
+    <div class="site-mobile-menu">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close mt-3">
+                <span class="icon-close2 js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <header class="site-navbar" role="banner">
+
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="../index.html" class="text-white h2 mb-0">竞争关键字</a></h1>
+                    <h5 style="color: white">推荐</h5>
+                </div>
+                <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+
+                        <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
+                            <li class="active"><a href="../index.html"><span>主页</span></a></li>
+                            <li><a href=""><span>算法分析</span></a></li>
+                            <li><a href="contact.html"><span>联系我们</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+
+                <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
+
+            </div>
+
+        </div>
+    </header>
+</div>
+
+
+
+
+
+<div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(../../static/images/hero_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+    <div class="container">
+        <div class="row align-items-center justify-content-center text-center">
+
+            <div class="col-md-10" data-aos="fade-up" data-aos-delay="400">
+
+
+                <div class="row justify-content-center">
+                    <div class="col-md-8 text-center">
+                        <h1>竞争关键字</h1>
+                        <p data-aos="fade-up" data-aos-delay="100"><a href="table.html">要获得详细的图表分析？请点击这里:)</a></p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--  展示总体结果的表格，修改数据通过最下方的script修改url进行修改-->
+<!--    <div class="site-section bg-light">-->
+<!--      <div class="layui-card" style="margin-left: 40px;margin-right: 40px;">-->
+<!--        <div class="layui-card">-->
+<!--          <div class="layui-card-body">-->
+<!--            <div id="line3" style="min-height:400px;"></div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="layui-card">-->
+<!--          <div class="layui-card-body">-->
+<!--            <div id="column1" style="min-height:400px;"></div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="layui-card-body">-->
+<!--          <p><h1 class="h1 text-black mb-3" style="margin: 20px">竞争关键字的感知评估</h1></p>-->
+<!--          <p><h3 class="h3 text-black mb-3" style="margin: 20px">说明：请评价如下种子关键字与推荐关键字之间的语义竞争水平，1星-非常低，5星-非常高</h3></p>-->
+<!--          <table id="test" lay-filter="test"></table>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<div class="site-section bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8" th:each = "keyword:${keywords}" >
+
+                <div class="d-block d-md-flex listing-horizontal">
+
+                    <a href="#" class="img d-block" style="background-image: url('../../static/images/img_2.jpg')">
+                        <span class="category"><th:block th:text="${keyword.compkey}" />怀孕</span>
+                    </a>
+
+                    <div class="lh-content">
+                        <a href="#" class="bookmark"><span class="icon-heart"></span></a>
+                        <h3><a href="#"><th:block th:text="${keyword.compkey}" />怀孕</a></h3>
+                        <p>中介关键词：<th:block th:text="${keyword.midkey}" />个月</p>
+                        <p>竞争度：<th:block th:text="${keyword.compPower}" />0.772</p>
+                        <p th:if="${keyword.compPower>0.7}">
+                            <span class="icon-star text-warning"></span>
+                            <span class="icon-star text-warning"></span>
+                            <span class="icon-star text-warning"></span>
+                            <span class="icon-star text-warning"></span>
+                            <span class="icon-star text-warning"></span>
+                            <span> (<th:block th:text="${keyword.compkey.count}" />  评价量) </span>
+                        </p>
+                        <p th:if="${keyword.compPower>0.4}">
+                            <span class="icon-star text-warning"></span>
+                            <span class="icon-star text-warning"></span>
+                            <span class="icon-star text-warning"></span>
+                            <span class="icon-star text-secondary"></span>
+                            <span class="icon-star text-secondary"></span>
+                            <span> (<th:block th:text="${keyword.compkey.count}" />  评价量) </span>
+                        </p>
+                        <p th:if="${keyword.compPower>0}">
+                            <span class="icon-star text-warning"></span>
+                            <span class="icon-star text-secondary"></span>
+                            <span class="icon-star text-secondary"></span>
+                            <span class="icon-star text-secondary"></span>
+                            <span class="icon-star text-secondary"></span>
+                            <span> (<th:block th:text="${keyword.compkey.count}" />  评价量) </span>
+                        </p>
+
+
+                    </div>
+
+                </div>
+
+                <div class="d-block d-md-flex listing-horizontal">
+
+                    <a href="#" class="img d-block" style="background-image: url('../../../static/static/images/img_1.jpg')">
+                        <span class="category">Hotels</span>
+                    </a>
+
+                    <div class="lh-content">
+                        <a href="#" class="bookmark"><span class="icon-heart"></span></a>
+                        <h3><a href="#">Luxe Hotel</a></h3>
+                        <p>West Orange, New York</p>
+                        <p>
+                            <span class="icon-star text-warning"></span>
+                            <span class="icon-star text-warning"></span>
+                            <span class="icon-star text-warning"></span>
+                            <span class="icon-star text-warning"></span>
+                            <span class="icon-star text-secondary"></span>
+                            <span>(492 Reviews)</span>
+                        </p>
+
+
+                    </div>
+
+                </div>
+
+                <div class="d-block d-md-flex listing-horizontal">
+
+                    <a href="#" class="img d-block" style="background-image: url('../../static/images/img_3.jpg')">
+                        <span class="category">Events</span>
+                    </a>
+
+                    <div class="lh-content">
+                        <a href="#" class="bookmark"><span class="icon-heart"></span></a>
+                        <h3><a href="#">Live Band</a></h3>
+                        <p>Don St, Brooklyn, New York</p>
+                        <p>
+                            <!--                  thyme leaf实现星星打分-->
+                            <!--                <div class=" layui-col-md2 " th:id="'a'+${comments.getId()}" style=""></div>-->
+                            <!--                  <script>-->
+                            <!--                    layui.use('rate', function () {-->
+                            <!--                      var rate = layui.rate;-->
+                            <!--                      var ins1 = rate.render({-->
+                            <!--                        elem: a[[${comments.getId()}]]       //绑定元素（＋a解决不能为全数字）-->
+                            <!--                        , length: 5            //星星个数-->
+                            <!--                        , value: [[${comments.getGrade()}]]    //初始化值-->
+                            <!--                        , theme: ' gold'     //颜色-->
+                            <!--                        , half: true           //支持半颗星-->
+                            <!--                        , text: true           //显示文本-->
+                            <!--                        , readonly: true      //只读-->
+                            <!--                        //自定义文本，点击后文本显示的内容-->
+                            <!--                        , setText: function () {-->
+                            <!--                          this.span.text([[${comments.getGrade()}]]+'.0')-->
+                            <!--                        }-->
+                            <!--                      });-->
+                            <!--                    });-->
+                            <!--                  </script>-->
+                        </p>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="d-block d-md-flex listing-horizontal">
+
+                    <a href="#" class="img d-block" style="background-image: url('../../static/images/img_4.jpg')">
+                        <span class="category">Others</span>
+                    </a>
+
+                    <div class="lh-content">
+                        <a href="#" class="bookmark"><span class="icon-heart"></span></a>
+                        <h3><a href="#">Gourmett Coffees</a></h3>
+                        <p>Don St, Brooklyn, New York</p>
+                        <p>
+                            <span class="icon-star text-warning"></span>
+                            <span class="icon-star text-warning"></span>
+                            <span class="icon-star text-warning"></span>
+                            <span class="icon-star text-warning"></span>
+                            <span class="icon-star text-secondary"></span>
+                            <span>(79 Reviews)</span>
+                        </p>
+
+
+                    </div>
+
+                </div>
+
+                <div class="d-block d-md-flex listing-horizontal">
+
+                    <a href="#" class="img d-block" style="background-image: url('../../static/images/img_5.jpg')">
+                        <span class="category">Spa</span>
+                    </a>
+
+                    <div class="lh-content">
+                        <a href="#" class="bookmark"><span class="icon-heart"></span></a>
+                        <h3><a href="#">La Italia Spa</a></h3>
+                        <p>Italy, Europe</p>
+                        <p>
+                            <span class="icon-star text-warning"></span>
+                            <span class="icon-star text-warning"></span>
+                            <span class="icon-star text-warning"></span>
+                            <span class="icon-star text-warning"></span>
+                            <span class="icon-star text-secondary"></span>
+                            <span>(48 Reviews)</span>
+                        </p>
+
+
+                    </div>
+
+                </div>
+
+                <div class="d-block d-md-flex listing-horizontal">
+
+                    <a href="#" class="img d-block" style="background-image: url('../../static/images/img_6.jpg')">
+                        <span class="category">Stores</span>
+                    </a>
+
+                    <div class="lh-content">
+                        <a href="#" class="bookmark"><span class="icon-heart"></span></a>
+                        <h3><a href="#">Super Market Malls</a></h3>
+                        <p>Don St, Brooklyn, New York</p>
+                        <p>
+                            <span class="icon-star text-warning"></span>
+                            <span class="icon-star text-warning"></span>
+                            <span class="icon-star text-warning"></span>
+                            <span class="icon-star text-warning"></span>
+                            <span class="icon-star text-secondary"></span>
+                            <span>(433 Reviews)</span>
+                        </p>
+
+
+                    </div>
+
+                </div>
+
+                <div class="col-12 mt-5 text-center">
+                    <div class="custom-pagination">
+                        <span>1</span>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <span class="more-page">...</span>
+                        <a href="#">10</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-3 ml-auto">
+
+                <div class="mb-5">
+                    <h3 class="h1 text-black mb-3">Rank</h3>
+                    <form action="#" method="post">
+                        <table class="layui-table" rules="none">
+                            <tbody>
+                            <tr>
+                                <td width="50px"><img src="../../static/images/1.png"/></td>
+                                <td>旅游</td>
+                            </tr>
+                            <tr>
+                                <td width="50px"><img src="../../static/images/2.png"/></td>
+                                <td>旅游</td>
+                            </tr>
+                            <tr>
+                                <td width="50px"><img src="../../static/images/3.png"/></td>
+                                <td>旅游</td>
+                            </tr>
+                            <tr>
+                                <td width="50px"><img src="../../static/images/4.png"/></td>
+                                <td>旅游</td>
+                            </tr>
+                            <tr>
+                                <td width="50px"><img src="../../static/images/5.png"/></td>
+                                <td>旅游</td>
+                            </tr>
+                            <tr>
+                                <td width="50px"><img src="../../static/images/6.png"/></td>
+                                <td>旅游</td>
+                            </tr>
+                            <tr>
+                                <td width="50px"><img src="../../static/images/7.png"/></td>
+                                <td>旅游</td>
+                            </tr>
+                            <tr>
+                                <td width="50px"><img src="../../static/images/8.png"/></td>
+                                <td>旅游</td>
+                            </tr>
+                            <tr>
+                                <td width="50px"><img src="../../static/images/9.png"/></td>
+                                <td>旅游</td>
+                            </tr>
+                            <tr>
+                                <td width="50px"><img src="../../static/images/10.png"/></td>
+                                <td>旅游</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!--                <div class="form-group">-->
+                        <!--                  <input type="text" placeholder="What are you looking for?" class="form-control">-->
+                        <!--                </div>-->
+                        <!--                <div class="form-group">-->
+                        <!--                  <div class="select-wrap">-->
+                        <!--                      <span class="icon"><span class="icon-keyboard_arrow_down"></span></span>-->
+                        <!--                      <select class="form-control" name="" id="">-->
+                        <!--                        <option value="">All Categories</option>-->
+                        <!--                        <option value="">Appartment</option>-->
+                        <!--                        <option value="">Restaurant</option>-->
+                        <!--                        <option value="">Eat &amp; Drink</option>-->
+                        <!--                        <option value="">Events</option>-->
+                        <!--                        <option value="">Fitness</option>-->
+                        <!--                        <option value="">Others</option>-->
+                        <!--                      </select>-->
+                        <!--                    </div>-->
+                        <!--                </div>-->
+                        <!--                <div class="form-group">-->
+                        <!--                  &lt;!&ndash; select-wrap, .wrap-icon &ndash;&gt;-->
+                        <!--                  <div class="wrap-icon">-->
+                        <!--                    <span class="icon icon-room"></span>-->
+                        <!--                    <input type="text" placeholder="Location" class="form-control">-->
+                        <!--                  </div>-->
+                        <!--                </div>-->
+                    </form>
+                </div>
+
+                <div class="mb-5">
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <p>Radius around selected destination</p>
+                        </div>
+                        <div class="form-group">
+                            <input type="range" min="0" max="100" value="20" data-rangeslider>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="mb-5">
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <p>Category 'Restaurant' is selected</p>
+                            <p>More filters</p>
+                        </div>
+                        <div class="form-group">
+                            <ul class="list-unstyled">
+                                <li>
+                                    <label for="option1">
+                                        <input type="checkbox" id="option1">
+                                        Coffee
+                                    </label>
+                                </li>
+                                <li>
+                                    <label for="option2">
+                                        <input type="checkbox" id="option2">
+                                        Vegetarian
+                                    </label>
+                                </li>
+                                <li>
+                                    <label for="option3">
+                                        <input type="checkbox" id="option3">
+                                        Vegan Foods
+                                    </label>
+                                </li>
+                                <li>
+                                    <label for="option4">
+                                        <input type="checkbox" id="option4">
+                                        Sea Foods
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="site-section">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-7 text-center border-primary">
+                <h2 class="font-weight-light text-primary">Popular Categories</h2>
+                <p class="color-black-opacity-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            </div>
+        </div>
+
+        <div class="row align-items-stretch">
+            <div class="col-6 col-sm-6 col-md-4 mb-4 mb-lg-0 col-lg-2">
+                <a href="#" class="popular-category h-100">
+                    <span class="icon mb-3"><span class="flaticon-hotel"></span></span>
+                    <span class="caption mb-2 d-block">Hotels</span>
+                    <span class="number">4,89</span>
+                </a>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4 mb-lg-0 col-lg-2">
+                <a href="#" class="popular-category h-100">
+                    <span class="icon mb-3"><span class="flaticon-microphone"></span></span>
+                    <span class="caption mb-2 d-block">Events</span>
+                    <span class="number">482</span>
+                </a>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4 mb-lg-0 col-lg-2">
+                <a href="#" class="popular-category h-100">
+                    <span class="icon mb-3"><span class="flaticon-flower"></span></span>
+                    <span class="caption mb-2 d-block">Spa</span>
+                    <span class="number">194</span>
+                </a>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4 mb-lg-0 col-lg-2">
+                <a href="#" class="popular-category h-100">
+                    <span class="icon mb-3"><span class="flaticon-restaurant"></span></span>
+                    <span class="caption mb-2 d-block">Stores</span>
+                    <span class="number">1,472</span>
+                </a>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4 mb-lg-0 col-lg-2">
+                <a href="#" class="popular-category h-100">
+                    <span class="icon mb-3"><span class="flaticon-cutlery"></span></span>
+                    <span class="caption mb-2 d-block">Restaurants</span>
+                    <span class="number">439</span>
+                </a>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4 mb-lg-0 col-lg-2">
+                <a href="#" class="popular-category h-100">
+                    <span class="icon mb-3"><span class="flaticon-bike"></span></span>
+                    <span class="caption mb-2 d-block">Other</span>
+                    <span class="number">692</span>
+                </a>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<div class="py-5 bg-primary">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 mr-auto mb-4 mb-lg-0">
+                <h2 class="mb-3 mt-0 text-white">Let's get started. Create your account</h2>
+                <p class="mb-0 text-white">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            </div>
+            <div class="col-lg-4">
+                <p class="mb-0"><a href="signup.html" class="btn btn-outline-white text-white btn-md px-5 font-weight-bold btn-md-block">Sign Up</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-6 mb-5 mb-lg-0 col-lg-3">
+                        <h2 class="footer-heading mb-4">Quick Links</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 mb-5 mb-lg-0 col-lg-3">
+                        <h2 class="footer-heading mb-4">Products</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 mb-5 mb-lg-0 col-lg-3">
+                        <h2 class="footer-heading mb-4">Features</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 mb-5 mb-lg-0 col-lg-3">
+                        <h2 class="footer-heading mb-4">Follow Us</h2>
+                        <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+                        <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+                        <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                        <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <h2 class="footer-heading mb-4">Subscribe Newsletter</h2>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <form action="#" method="post">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary text-white" type="button" id="button-addon2">Send</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row pt-5 mt-5">
+            <div class="col-12 text-md-center text-left">
+                <p>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright ©<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script src="../../static/js/jquery-3.3.1.min.js"></script>
+<script src="../../static/js/jquery-migrate-3.0.1.min.js"></script>
+<script src="../../static/js/jquery-ui.js"></script>
+<script src="../../static/js/popper.min.js"></script>
+<script src="../../static/js/bootstrap.min.js"></script>
+<script src="../../static/js/owl.carousel.min.js"></script>
+<script src="../../static/js/jquery.stellar.min.js"></script>
+<script src="../../static/js/jquery.countdown.min.js"></script>
+<script src="../../static/js/jquery.magnific-popup.min.js"></script>
+<script src="../../static/js/bootstrap-datepicker.min.js"></script>
+<script src="../../static/js/aos.js"></script>
+<script src="../../static/js/rangeslider.min.js"></script>
+
+<script src="../../static/js/main.js"></script>
+<script src="../../static/component/layui/layui.js"></script>
+<script src="../../static/component/pear/pear.js"></script>
+<script src="../../static/script/line3.js"></script>
+<script src="../../static/script/column1.js"></script>
+<script>
+    layui.use(['table', 'form', 'jquery', 'drawer', 'dropdown','rate'], function() {
+        let table = layui.table,
+            layer = layui.layer,
+            rate  =layui.rate;
+        let form = layui.form;
+        let $ = layui.jquery;
+        let drawer = layui.drawer;
+        let dropdown = layui.dropdown;
+
+        let MODULE_PATH = "/system/user/";
+
+        let cols = [
+            [
+                {
+                    title: '序列',
+                    field: 'sequence',
+                    align: 'center',
+                    width: 80
+                },
+                {
+                    title: '竞争关键字',
+                    field: 'keyWord',
+                    align: 'center',
+                    width: 100
+                },
+                {
+                    title: '中介关键字',
+                    field: 'midKey',
+                    align: 'center'
+                },
+                {
+                    title: '竞争度',
+                    field: 'competitive',
+                    align: 'center',
+                },
+                {
+                    title: '满意度',
+                    field: 'satisfaction',
+                    align: 'center',
+                    sort:true,
+                    id:'rate',
+                    templet: function (d) {
+                        //在设置星级的列中用templet函数转义，其中d.id代表该行的id值.第一行的评分的id=start1，第二行的评分的id=star2.....用在后面循环赋值。很重要！
+                        return '<div id="star'+d.sequence+'" style="font-size: 30px;alignment: center"></div>'
+                    }
+                }
+            ]
+        ]
+
+        //修改这里的url可以传后台数据
+        table.render({
+            elem: '#test',//注意这个值
+            id:"AnswerReload",//table的id值
+            url: '../../static/admin/data/table.json',
+            // where: { question_id: question_id,//请求参数 }
+            // method: 'post',//请求方式
+            // contentType: "application/json;charset=utf-8",//数据类型
+            // url: 'http://192.168.*.*:8000/******/',//后台数据接口
+            // // toolbar: '#toolbarDemo',
+            // jump: function(obj){
+            //     console.log(obj)
+            // },
+            cols:cols,
+            //回调函数，在里面设置rate.render(),给rate循环赋值
+            even:true,//隔行变色
+            done:function(res){
+                var data = res.data;//返回的json中data数据
+                var that = this.elem.next();
+                table_data = data;//全局变量，用在后面排序，与这个循环无关。
+                for (var item in data) {
+                    //星级
+                    rate.render({//循环设置评分
+                        elem: '#star'+data[item].sequence+''//给不同的id的rate绑定不同的值
+                        , length: 5            //星星个数
+                        , value: data[item].satisfaction      //初始化值
+                        , theme: '#009688'     //颜色
+                        , half: true           //支持半颗星
+                        , text: false           //显示文本，默认显示 '3.5星'
+                        // , readonly: true      //只读
+                    });
+                };
+                $('th').css({'background-color':'#00918e','color':'#000000','font-weight':'bold','font-size':'20px'})
+            }
+        });
+
+        table.on('tool(tableList)', function (obj) {
+            var data = obj.data; //获得当前行数据
+            var layEvent = obj.event; //获得 lay-event 对应的值
+            var tr = obj.tr; //获得当前行 tr 的DOM对象
+            if (layEvent == 'detail') {
+                common.cmsLayOpen('查看', "/Page.aspx?Id=" + data.Id, '100%', '100%'); //点击某一列打开新的页面
+            }
+        });
+
+        window.refresh = function(param) {
+            table.reload('user-table');
+        }
+    })
+</script>
+</body>
+</html>
