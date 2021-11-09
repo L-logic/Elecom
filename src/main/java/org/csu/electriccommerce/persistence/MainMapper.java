@@ -5,6 +5,6 @@ import org.csu.electriccommerce.entity.Keyword;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface MainMapper extends BaseMapper<Keyword> {
-
+public interface MainMapper {
+    void addKeyword();
 }
