@@ -173,49 +173,13 @@
           <div class="col-lg-3 ml-auto">
 
             <div class="mb-5">
-              <h3 class="h1 text-black mb-3">Rank</h3>
+              <h3 class="h1 text-black mb-3">排名</h3>
               <form action="#" method="post">
                 <table class="layui-table" rules="none">
-                  <tbody>
+                  <tbody th:each="item,iterStat:${keyword.compkey}">
                     <tr>
-                      <td width="50px"><img src="../images/1.png"/></td>
-                      <td>旅游</td>
-                    </tr>
-                    <tr>
-                      <td width="50px"><img src="../images/2.png"/></td>
-                      <td>旅游</td>
-                    </tr>
-                    <tr>
-                      <td width="50px"><img src="../images/3.png"/></td>
-                      <td>旅游</td>
-                    </tr>
-                    <tr>
-                      <td width="50px"><img src="../images/4.png"/></td>
-                      <td>旅游</td>
-                    </tr>
-                    <tr>
-                      <td width="50px"><img src="../images/5.png"/></td>
-                      <td>旅游</td>
-                    </tr>
-                    <tr>
-                      <td width="50px"><img src="../images/6.png"/></td>
-                      <td>旅游</td>
-                    </tr>
-                    <tr>
-                      <td width="50px"><img src="../images/7.png"/></td>
-                      <td>旅游</td>
-                    </tr>
-                    <tr>
-                      <td width="50px"><img src="../images/8.png"/></td>
-                      <td>旅游</td>
-                    </tr>
-                    <tr>
-                      <td width="50px"><img src="../images/9.png"/></td>
-                      <td>旅游</td>
-                    </tr>
-                    <tr>
-                      <td width="50px"><img src="../images/10.png"/></td>
-                      <td>旅游</td>
+                      <td width="50px"><img th:src="'../images/'+${iterStat.index+1}+'.png'"/></td>
+                      <td th:text="${item}">旅游</td>
                     </tr>
                   </tbody>
                 </table>
