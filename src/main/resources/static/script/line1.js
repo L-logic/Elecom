@@ -1,251 +1,142 @@
-layui.use(['echarts'], function() {
-	let echarts = layui.echarts;
+layui.use(['echarts'],function (){
+	var chartDom = document.getElementById('line1');
+	var myChart = echarts.init(chartDom);
+	var option;
 
-	var line2 = echarts.init(document.getElementById('line2'));
-
-	const colorList = ["#9E87FF", '#73DDFF', '#fe9a8b', '#F56948', '#9E87FF']
-	option = {
-		backgroundColor: '#fff',
-		title: {
-			text: '全国6月销售统计',
-			textStyle: {
-				fontSize: 12,
-				fontWeight: 400
+	setTimeout(function () {
+		option = {
+			// legend: {},
+			// tooltip: {
+			// 	trigger: 'axis',
+			// 	showContent: false
+			// },
+			dataset: {
+				source: [
+					['product', '2012', '2013', '2014', '2015', '2016', '2017'],
+					['Milk Tea', 56.5, 82.1, 88.7, 70.1, 53.4, 85.1],
+					['Matcha Latte', 51.1, 51.4, 55.1, 53.3, 73.8, 68.7],
+					['Cheese Cocoa', 40.1, 62.2, 69.5, 36.4, 45.2, 32.5],
+					['Walnut Brownie', 25.2, 37.1, 41.2, 18, 33.9, 49.1]
+				]
 			},
-			left: 'center',
-			top: '5%'
-		},
-		legend: {
-			icon: 'circle',
-			top: '5%',
-			right: '5%',
-			itemWidth: 6,
-			itemGap: 20,
-			textStyle: {
-				color: '#556677'
-			}
-		},
-		tooltip: {
-			trigger: 'axis',
-			axisPointer: {
-				label: {
-					show: true,
-					backgroundColor: '#fff',
-					color: '#556677',
-					borderColor: 'rgba(0,0,0,0)',
-					shadowColor: 'rgba(0,0,0,0)',
-					shadowOffsetY: 0
-				},
-				lineStyle: {
-					width: 0
-				}
+			// xAxis: { type: 'category' },
+			// yAxis: { gridIndex: 0 },
+			// grid: { top: '55%' },
+			title: {
+				text: '算法运行效率分析'
 			},
-			backgroundColor: '#fff',
-			textStyle: {
-				color: '#5c6c7c'
-			},
-			padding: [10, 10],
-			extraCssText: 'box-shadow: 1px 0 2px 0 rgba(163,163,163,0.5)'
-		},
-		grid: {
-			top: '15%'
-		},
-		xAxis: [{
-			type: 'category',
-			data: ['北京', '上海', '广州', '深圳', '香港', '澳门', '台湾'],
-			axisLine: {
-				lineStyle: {
-					color: '#DCE2E8'
-				}
-			},
-			axisTick: {
-				show: false
-			},
-			axisLabel: {
-				interval: 0,
-				textStyle: {
-					color: '#556677'
-				},
-				// 默认x轴字体大小
-				fontSize: 12,
-				// margin:文字到x轴的距离
-				margin: 15
-			},
-			axisPointer: {
-				label: {
-					// padding: [11, 5, 7],
-					padding: [0, 0, 10, 0],
-
-					// 这里的margin和axisLabel的margin要一致!
-					margin: 15,
-					// 移入时的字体大小
-					fontSize: 12,
-					backgroundColor: {
-						type: 'linear',
-						x: 0,
-						y: 0,
-						x2: 0,
-						y2: 1,
-						colorStops: [{
-							offset: 0,
-							color: '#fff' // 0% 处的颜色
-						}, {
-							// offset: 0.9,
-							offset: 0.86,
-
-							color: '#fff' // 0% 处的颜色
-						}, {
-							offset: 0.86,
-							color: '#33c0cd' // 0% 处的颜色
-						}, {
-							offset: 1,
-							color: '#33c0cd' // 100% 处的颜色
-						}],
-						global: false // 缺省为 false
+			tooltip: {
+				trigger: 'axis',
+				axisPointer: {
+					type: 'line',
+					label: {
+						backgroundColor: '#6a7985'
 					}
 				}
 			},
-			boundaryGap: false
-		}],
-		yAxis: [{
-			type: 'value',
-			axisTick: {
-				show: false
+			legend: {
+				data: ['2个', '4个', '6个', '8个', '10个']
 			},
-			axisLine: {
-				show: true,
-				lineStyle: {
-					color: '#DCE2E8'
+			toolbox: {
+				feature: {
+					dataView: { show: true, readOnly: false },
+					magicType: { show: true, type: ['line', 'bar'] },
+					restore: { show: true },
+					saveAsImage: { show: true }
 				}
 			},
-			axisLabel: {
-				textStyle: {
-					color: '#556677'
+			grid: {
+				left: '3%',
+				right: '4%',
+				bottom: '3%',
+				containLabel: true
+			},
+			xAxis: [
+				{
+					name: '数据量',
+					type: 'category',
+					boundaryGap: false,
+					data: ['5M', '10M', '15M', '20M', '25M', '30M']
 				}
-			},
-			splitLine: {
-				show: false
-			}
-		}, {
-			type: 'value',
-			position: 'right',
-			axisTick: {
-				show: false
-			},
-			axisLabel: {
-				textStyle: {
-					color: '#556677'
+			],
+			yAxis: [
+				{
+					name: '运行时间',
+					type: 'value'
+				}
+			],
+			series: [
+				{
+					name: '2个',
+					stack: 'Total',
+					areaStyle: {},
+					label: {
+						show: true,
+						position: 'top'
+					},
+					seriesLayoutBy: 'row',
+					// data: [10681,11297,19421,26051,31533,41962],
+					type: 'line',
+					smooth: true,
+					emphasis: { focus: 'series' }
 				},
-				formatter: '{value}'
-			},
-			axisLine: {
-				show: true,
-				lineStyle: {
-					color: '#DCE2E8'
+				{
+					type: 'line',
+					smooth: true,
+					seriesLayoutBy: 'row',
+					emphasis: { focus: 'series' }
+				},
+				{
+					type: 'line',
+					smooth: true,
+					seriesLayoutBy: 'row',
+					emphasis: { focus: 'series' }
+				},
+				{
+					type: 'line',
+					smooth: true,
+					seriesLayoutBy: 'row',
+					emphasis: { focus: 'series' }
+				},
+				{
+					type: 'pie',
+					id: 'pie',
+					radius: '30%',
+					center: ['50%', '25%'],
+					emphasis: {
+						focus: 'self'
+					},
+					label: {
+						formatter: '{b}: {@2012} ({d}%)'
+					},
+					encode: {
+						itemName: 'product',
+						value: '2012',
+						tooltip: '2012'
+					}
 				}
-			},
-			splitLine: {
-				show: false
-			}
-		}],
-		series: [{
-				name: 'Adidas',
-				type: 'line',
-				data: [10, 10, 30, 12, 15, 3, 7],
-				symbolSize: 1,
-				symbol: 'circle',
-				smooth: true,
-				yAxisIndex: 0,
-				showSymbol: false,
-				lineStyle: {
-					width: 5,
-					color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
-							offset: 0,
-							color: '#9effff'
+			]
+		};
+		myChart.on('updateAxisPointer', function (event) {
+			const xAxisInfo = event.axesInfo[0];
+			if (xAxisInfo) {
+				const dimension = xAxisInfo.value + 1;
+				myChart.setOption({
+					series: {
+						id: 'pie',
+						label: {
+							formatter: '{b}: {@[' + dimension + ']} ({d}%)'
 						},
-						{
-							offset: 1,
-							color: '#9E87FF'
+						encode: {
+							value: dimension,
+							tooltip: dimension
 						}
-					]),
-					shadowColor: 'rgba(158,135,255, 0.3)',
-					shadowBlur: 10,
-					shadowOffsetY: 20
-				},
-				itemStyle: {
-					normal: {
-						color: colorList[0],
-						borderColor: colorList[0]
 					}
-				}
-			}, {
-				name: 'Nike',
-				type: 'line',
-				data: [5, 12, 11, 14, 25, 16, 10],
-				symbolSize: 1,
-				symbol: 'circle',
-				smooth: true,
-				yAxisIndex: 0,
-				showSymbol: false,
-				lineStyle: {
-					width: 5,
-					color: new echarts.graphic.LinearGradient(1, 1, 0, 0, [{
-							offset: 0,
-							color: '#73DD39'
-						},
-						{
-							offset: 1,
-							color: '#73DDFF'
-						}
-					]),
-					shadowColor: 'rgba(115,221,255, 0.3)',
-					shadowBlur: 10,
-					shadowOffsetY: 20
-				},
-				itemStyle: {
-					normal: {
-						color: colorList[1],
-						borderColor: colorList[1]
-					}
-				}
-			},
-			{
-				name: '老北京布鞋',
-				type: 'line',
-				data: [150, 120, 170, 140, 500, 160, 110],
-				symbolSize: 1,
-				yAxisIndex: 1,
-				symbol: 'circle',
-				smooth: true,
-				showSymbol: false,
-				lineStyle: {
-					width: 5,
-					color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
-							offset: 0,
-							color: '#fe9a'
-						},
-						{
-							offset: 1,
-							color: '#fe9a8b'
-						}
-					]),
-					shadowColor: 'rgba(254,154,139, 0.3)',
-					shadowBlur: 10,
-					shadowOffsetY: 20
-				},
-				itemStyle: {
-					normal: {
-						color: colorList[2],
-						borderColor: colorList[2]
-					}
-				}
+				});
 			}
-		]
-	};
+		});
+		myChart.setOption(option);
+	});
 
-	line2.setOption(option);
-
-	window.onresize = function() {
-		line2.resize();
-	}
+	option && myChart.setOption(option);
 })
