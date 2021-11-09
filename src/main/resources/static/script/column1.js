@@ -16,7 +16,7 @@ option = {
     legend: {
         top:'5%',
         right:'10%',
-        data: ['猕猴桃', '香蕉'],
+        data: ['竞争度', 'Grade'],
         textStyle:{
             fontSize:12,
             color:'#808080'
@@ -43,11 +43,11 @@ option = {
             margin:21,
             fontWeight:'bold'
         },
-        data: ['第一周', '第二周', '第三周', '第四周'],
+        data: ['怀孕', '做法', 'qq', '视频'],
        
     }],
     yAxis: [{
-        name:'单位：万',
+        // name:'单位：万',
         nameTextStyle:{
             color:'#808080',
             fontSize:12,
@@ -78,13 +78,14 @@ option = {
     }],
     series: [
         {
-            name: '猕猴桃',
+            name: '竞争度',
             type: 'bar',
             label:{
                 show:true,
                 position:'top',
                 fontSize:14,
-                color:'#3DC3F0',
+                color:'#5be8da',
+                // color:'#3DC3F0',
                 fontWeight:'bold'
             },
             barMaxWidth:60,
@@ -96,22 +97,25 @@ option = {
                     x2: 0,
                     y2: 1,
                     colorStops: [{
-                        offset: 0, color: '#3DC3F0' // 0% 处的颜色
+                        offset: 0,color: '#5be8da'
+                        // offset: 0, color: '#3DC3F0' // 0% 处的颜色
                     }, {
-                        offset: 1, color: '#CCF2FF' // 100% 处的颜色
+                        offset: 1, color: '#ffffff' // 100% 处的颜色
+                        // offset: 1, color: '#CCF2FF' // 100% 处的颜色
                     }]
                 }
             },
-            data: [60, 110, 180, 100]
+            data: [0.7242, 0.5489, 0.3532, 0.1333]
         }, 
         {
-            name: '香蕉',
+            name: '打分',
             type: 'bar',
-                        label:{
+            label:{
                 show:true,
                 position:'top',
                 fontSize:14,
-                color:'#3D8BF0',
+                color:'#009688',
+                // color:'#3D8BF0',
                 fontWeight:'bold'
             },
             barMaxWidth:60,
@@ -123,13 +127,15 @@ option = {
                     x2: 0,
                     y2: 1,
                     colorStops: [{
-                        offset: 0, color: '#3D8BF0' // 0% 处的颜色
+                        offset: 0,color: '#009688'
+                        // offset: 0, color: '#3D8BF0' // 0% 处的颜色
                     }, {
-                        offset: 1, color: '#CCE2FF' // 100% 处的颜色
+                        offset: 1, color: '#ffffff' // 100% 处的颜色
+                        // offset: 1, color: '#CCE2FF' // 100% 处的颜色
                     }]
                 }
             },
-            data: [90, 130, 170, 130]
+            data: [5, 4.5, 1, 2.5]
         }
     ]
 };

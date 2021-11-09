@@ -84,7 +84,8 @@ option = {
                 show:true,
                 position:'top',
                 fontSize:14,
-                color:'#3DC3F0',
+                color:'#009688',
+                // color:'#3DC3F0',
                 fontWeight:'bold'
             },
             barMaxWidth:60,
@@ -96,7 +97,8 @@ option = {
                     x2: 0,
                     y2: 1,
                     colorStops: [{
-                        offset: 0, color: '#3DC3F0' // 0% 处的颜色
+                        offset: 0,color: '#009688'
+                        // offset: 0, color: '#3DC3F0' // 0% 处的颜色
                     }, {
                         offset: 1, color: '#CCF2FF' // 100% 处的颜色
                     }]
@@ -107,11 +109,11 @@ option = {
         {
             name: '香蕉',
             type: 'bar',
-                        label:{
+            label:{
                 show:true,
                 position:'top',
+                color:'#009688',
                 fontSize:14,
-                color:'#3D8BF0',
                 fontWeight:'bold'
             },
             barMaxWidth:60,
@@ -123,7 +125,8 @@ option = {
                     x2: 0,
                     y2: 1,
                     colorStops: [{
-                        offset: 0, color: '#3D8BF0' // 0% 处的颜色
+                        offset: 0,color: '#009688'
+                        // offset: 0, color: '#3D8BF0' // 0% 处的颜色
                     }, {
                         offset: 1, color: '#CCE2FF' // 100% 处的颜色
                     }]

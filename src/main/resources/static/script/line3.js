@@ -3,12 +3,12 @@ layui.use(['echarts'], function() {
 
 	var line3 = echarts.init(document.getElementById('line3'));
 
-	const colorList = ["#9E87FF", '#73DDFF', '#fe9a8b', '#F56948', '#9E87FF']
+	const colorList = ["#9E87FF", '#73DDFF', '#fe9a8b', '#F56948', '#FFB761']
 
 	option = {
 		backgroundColor: '#fff',
 		title: {
-			text: "告警数",
+			text: "竞争关键字",
 			left: "18px",
 			top: "0",
 			textStyle: {
@@ -17,7 +17,8 @@ layui.use(['echarts'], function() {
 				fontWeight: '400'
 			}
 		},
-		color: ['#73A0FA', '#73DEB3', '#FFB761'],
+		color:colorList,
+		// color: ['#73A0FA', '#73DEB3', '#FFB761','#b173de', '#FFB761'],
 		tooltip: {
 			trigger: 'axis',
 			axisPointer: {
@@ -38,7 +39,7 @@ layui.use(['echarts'], function() {
 			containLabel: true
 		},
 		legend: {
-			data: ['上周', '本周'],
+			data: ['怀孕', '做法','名字','qq','视频'],
 			orient: 'horizontal',
 			icon: "rect",
 			show: true,
@@ -47,7 +48,7 @@ layui.use(['echarts'], function() {
 		},
 		xAxis: {
 			type: 'category',
-			data: ['爱立信端局', '中兴端局', '爱立信HSS', '中兴HSS', '华为HSS', '华为智能网', '中兴VIMS'],
+			data: ['5次前', '4次前', '3次前', '2次前', '1次前'],
 			splitLine: {
 				show: false
 			},
@@ -80,16 +81,34 @@ layui.use(['echarts'], function() {
 			},
 		},
 		series: [{
-				name: '上周',
+				name: '怀孕',
 				type: 'line',
 				smooth: true,
-				data: [1800, 1000, 2000, 1000, 500, 100, 1200]
+				data: [3.5, 5, 5, 5, 5]
 			},
 			{
-				name: '本周',
+				name: '做法',
 				type: 'line',
 				smooth: true,
-				data: [1700, 999, 1100, 899, 199, 99, 1000]
+				data: [4.5, 3, 4, 2, 5]
+			},
+			{
+				name: '名字',
+				type: 'line',
+				smooth: true,
+				data: [2.5, 3, 5, 4, 5]
+			},
+			{
+				name: 'qq',
+				type: 'line',
+				smooth: true,
+				data: [4, 1.5, 2, 1.5, 3]
+			},
+			{
+				name: '视频',
+				type: 'line',
+				smooth: true,
+				data: [2, 3, 1.5, 4.5, 5]
 			}
 		]
 	};
