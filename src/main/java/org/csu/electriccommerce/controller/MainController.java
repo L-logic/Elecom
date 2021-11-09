@@ -6,8 +6,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.List;
-
 @Controller
 @RequestMapping("/main")
 public class MainController {
@@ -19,10 +17,11 @@ public class MainController {
             @RequestParam("word") String word,
             Model model) {
         if (word != null) {
+            System.out.println(word);
             Keyword keyword = new Keyword();
             keyword.setKeyword(word);
             model.addAttribute(keyword);
-            return "listings";
+            return "page/listings";
         }
         return "index";
     }
