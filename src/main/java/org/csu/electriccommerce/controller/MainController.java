@@ -77,7 +77,6 @@ public class MainController {
 //        }
 //        System.out.println(keywordArrayList);
 
-
         System.out.println(req.getQueryString());
         String[] list = req.getQueryString().split("&");
         ArrayList<String> strings = new ArrayList<>();

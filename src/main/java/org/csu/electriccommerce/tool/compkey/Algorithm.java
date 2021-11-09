@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class Algorithm {
     public static void algorithm(Keyword wordKeyTemp, int num) throws UnsupportedEncodingException, IOException, Exception{
         //new pretreatment().pretreatment(wordKeyTemp.getWordKey()); //已完成从原数据中提取出与种子关键字相关的搜索信息
-        //new MainDataClass().data(wordKeyTemp.getKeyword());
+        new MainDataClass().data(wordKeyTemp.getKeyword());
         PathClass pa = new PathClass();
         InputStreamReader inStream = new InputStreamReader(new FileInputStream(pa.wordNewPath+wordKeyTemp.getKeyword()+"frequencis.txt"), StandardCharsets.UTF_8);
         BufferedReader bf = new BufferedReader(inStream);
@@ -128,41 +128,41 @@ public class Algorithm {
         wordKeyTemp.setCompPoint(CompPowerList);
         System.out.println(wordKeyTemp.getCompPoint());
 
-//        //输出最终结果
-//        PrintStream out = System.out;
-//        String Result = pa.wordResult + wordKeyTemp.getKeyword() + pa.txt;
-//        PrintStream ps1 = new PrintStream(Result);/*保存屏幕信息*/
-//        System.setOut(ps1);
-//        System.out.println("[" + wordKeyTemp.getKeyword() + "] 对应竞争性关键字的竞争度排序如下：");
-//        System.out.println();
-//        System.out.printf("%-20s%-20s%-20s","中介关键字","竞争关键字","竞争度");
-//        System.out.println();
-//        Double t;
-//        String x,y;
-//        //排序
-//        for(int i = 0; i < num - 1; i++) {
-//            for(int j = 0; j < num - i - 1; j++) {
-//                if(wordKeyTemp.getCompPower().get(j) < wordKeyTemp.getCompPower().get(j+1)) {
-//                    //替换竞争度
-//                    t = wordKeyTemp.getCompPower().get(j);
-//                    wordKeyTemp.getCompPower().set(j,wordKeyTemp.getCompPower().get(j+1));
-//                    wordKeyTemp.getCompPower().set(j+1,t);
-//                    //替换中介关键字
-//                    x = wordKeyTemp.getMidkey().get(j);
-//                    wordKeyTemp.getMidkey().set(j,wordKeyTemp.getMidkey().get(j+1));
-//                    wordKeyTemp.getMidkey().set(j+1,x);
-//                    //替换竞争关键字
-//                    y = wordKeyTemp.getCompkey().get(j);
-//                    wordKeyTemp.getCompkey().set(j,wordKeyTemp.getCompkey().get(j+1));
-//                    wordKeyTemp.getCompkey().set(j+1,y);
-//                }
-//            }
-//        }
-//        for(int i = 0; i < num; i++) {
-//            System.out.printf("%7s%27s%25s", wordKeyTemp.getMidkey().get(i) , wordKeyTemp.getCompkey().get(i) , String.format("%.16f", wordKeyTemp.getCompPower().get(i)));
-//            System.out.println();
-//        }
-//       System.setOut(out);
+        //输出最终结果
+        PrintStream out = System.out;
+        String Result = pa.wordResult + wordKeyTemp.getKeyword() + pa.txt;
+        PrintStream ps1 = new PrintStream(Result);/*保存屏幕信息*/
+        System.setOut(ps1);
+        System.out.println("[" + wordKeyTemp.getKeyword() + "] 对应竞争性关键字的竞争度排序如下：");
+        System.out.println();
+        System.out.printf("%-20s%-20s%-20s","中介关键字","竞争关键字","竞争度");
+        System.out.println();
+        Double t;
+        String x,y;
+        //排序
+        for(int i = 0; i < num - 1; i++) {
+            for(int j = 0; j < num - i - 1; j++) {
+                if(wordKeyTemp.getCompPoint().get(j) < wordKeyTemp.getCompPoint().get(j+1)) {
+                    //替换竞争度
+                    t = wordKeyTemp.getCompPoint().get(j);
+                    wordKeyTemp.getCompPoint().set(j,wordKeyTemp.getCompPoint().get(j+1));
+                    wordKeyTemp.getCompPoint().set(j+1,t);
+                    //替换中介关键字
+                    x = wordKeyTemp.getMidkey().get(j);
+                    wordKeyTemp.getMidkey().set(j,wordKeyTemp.getMidkey().get(j+1));
+                    wordKeyTemp.getMidkey().set(j+1,x);
+                    //替换竞争关键字
+                    y = wordKeyTemp.getCompkey().get(j);
+                    wordKeyTemp.getCompkey().set(j,wordKeyTemp.getCompkey().get(j+1));
+                    wordKeyTemp.getCompkey().set(j+1,y);
+                }
+            }
+        }
+        for(int i = 0; i < num; i++) {
+            System.out.printf("%7s%27s%25s", wordKeyTemp.getMidkey().get(i) , wordKeyTemp.getCompkey().get(i) , String.format("%.16f", wordKeyTemp.getCompPoint().get(i)));
+            System.out.println();
+        }
+       System.setOut(out);
     }
 
 }
