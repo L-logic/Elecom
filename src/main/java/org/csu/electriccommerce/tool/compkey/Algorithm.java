@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class Algorithm {
     public static void algorithm(Keyword wordKeyTemp, int num) throws UnsupportedEncodingException, IOException, Exception{
         //new pretreatment().pretreatment(wordKeyTemp.getWordKey()); //已完成从原数据中提取出与种子关键字相关的搜索信息
-        new MainDataClass().data(wordKeyTemp.getKeyword());
+        //new MainDataClass().data(wordKeyTemp.getKeyword());
         PathClass pa = new PathClass();
         InputStreamReader inStream = new InputStreamReader(new FileInputStream(pa.wordNewPath+wordKeyTemp.getKeyword()+"frequencis.txt"), StandardCharsets.UTF_8);
         BufferedReader bf = new BufferedReader(inStream);
@@ -20,7 +20,7 @@ public class Algorithm {
 
         int count = 0;
         String word = null;
-        ArrayList<String> arrayList = new ArrayList<>();
+        ArrayList<String> midwordList = new ArrayList<>();
         while ((word = bf.readLine()) != null) {
             int equel = word.indexOf(" ");
             word = word.substring(0, equel); //过滤词频文件中，单字词语、首位为数字的词和种子关键字
@@ -28,7 +28,7 @@ public class Algorithm {
                 continue;
             } else {
                 count++;
-                arrayList.add(word);
+                midwordList.add(word);
                 bw.write(word);
                 bw.newLine();
             }
@@ -37,7 +37,7 @@ public class Algorithm {
             }
         }
         bw.close();
-        wordKeyTemp.setMidkey(arrayList);
+        wordKeyTemp.setMidkey(midwordList);
         System.out.println(wordKeyTemp.getMidkey());
 
         InputStreamReader inStream1 = new InputStreamReader(new FileInputStream(pa.wordOut), StandardCharsets.UTF_8);
@@ -64,12 +64,11 @@ public class Algorithm {
 
         InputStreamReader inStream3 = new InputStreamReader(new FileInputStream(pa.wordNewPath+wordKeyTemp.getKeyword()+"compFrequencis.txt"), StandardCharsets.UTF_8);
         BufferedReader bf3 = new BufferedReader(inStream3);
-        OutputStreamWriter outStream3 = new OutputStreamWriter(new FileOutputStream(pa.wordNewPath+wordKeyTemp.getKeyword()+"compKeyword.txt"), StandardCharsets.UTF_8);
-        BufferedWriter bw3 = new BufferedWriter(outStream3);
+
 
         int temp = 0;
         String compWord = null;
-        ArrayList<String> arrayList1 = new ArrayList<>();
+        ArrayList<String> compwordList = new ArrayList<>();
         while ((compWord = bf3.readLine()) != null) {
             int equel = compWord.indexOf(" ");
             compWord = compWord.substring(0, equel);
@@ -81,17 +80,16 @@ public class Algorithm {
                 continue;
             } else {
                 temp++;
-                arrayList1.add(compWord);
-                bw3.write(compWord);
-                bw3.newLine();
+                compwordList.add(compWord);
+
             }
             if (temp == num) {
                 break;
             }
         }
-        bw3.close();
-        wordKeyTemp.setCompkey(arrayList1);
-        System.out.println(wordKeyTemp.getCompkey());
+
+        wordKeyTemp.setCompkey(compwordList);
+       // System.out.println(wordKeyTemp.getCompkey());
 
 
         int a = 0; //所有含中介关键词的搜索量
@@ -100,7 +98,7 @@ public class Algorithm {
 
         String value = null;
         //每个种子关键字对应 num 个竞争关键字
-        ArrayList<Double> arrayList2 = new ArrayList<>();
+        ArrayList<Double> CompPowerList = new ArrayList<>();
         for (int i = 0; i < num; i++) {
             InputStreamReader inStream4 = new InputStreamReader(new FileInputStream(new File(pa.wordOut)), StandardCharsets.UTF_8);//读取文件
             BufferedReader bf4 = new BufferedReader(inStream4);
@@ -118,53 +116,53 @@ public class Algorithm {
             double result;
             if(a - sa == 0) {
                 result = -1;
-                arrayList2.add(result);
+                CompPowerList.add(result);
             } else {
                 result = (double)ka / (double)(a - sa);
-                arrayList2.add(result);
+                CompPowerList.add(result);
             }
             a = 0;
             ka = 0;
             sa = 0;
         }
-        wordKeyTemp.setCompPower(arrayList2);
-        System.out.println(wordKeyTemp.getCompPower());
+        wordKeyTemp.setCompPoint(CompPowerList);
+        System.out.println(wordKeyTemp.getCompPoint());
 
-        //输出最终结果
-        PrintStream out = System.out;
-        String Result = pa.wordResult + wordKeyTemp.getKeyword() + pa.txt;
-        PrintStream ps1 = new PrintStream(Result);/*保存屏幕信息*/
-        System.setOut(ps1);
-        System.out.println("[" + wordKeyTemp.getKeyword() + "] 对应竞争性关键字的竞争度排序如下：");
-        System.out.println();
-        System.out.printf("%-20s%-20s%-20s","中介关键字","竞争关键字","竞争度");
-        System.out.println();
-        Double t;
-        String x,y;
-        //排序
-        for(int i = 0; i < num - 1; i++) {
-            for(int j = 0; j < num - i - 1; j++) {
-                if(wordKeyTemp.getCompPower().get(j) < wordKeyTemp.getCompPower().get(j+1)) {
-                    //替换竞争度
-                    t = wordKeyTemp.getCompPower().get(j);
-                    wordKeyTemp.getCompPower().set(j,wordKeyTemp.getCompPower().get(j+1));
-                    wordKeyTemp.getCompPower().set(j+1,t);
-                    //替换中介关键字
-                    x = wordKeyTemp.getMidkey().get(j);
-                    wordKeyTemp.getMidkey().set(j,wordKeyTemp.getMidkey().get(j+1));
-                    wordKeyTemp.getMidkey().set(j+1,x);
-                    //替换竞争关键字
-                    y = wordKeyTemp.getCompkey().get(j);
-                    wordKeyTemp.getCompkey().set(j,wordKeyTemp.getCompkey().get(j+1));
-                    wordKeyTemp.getCompkey().set(j+1,y);
-                }
-            }
-        }
-        for(int i = 0; i < num; i++) {
-            System.out.printf("%7s%27s%25s", wordKeyTemp.getMidkey().get(i) , wordKeyTemp.getCompkey().get(i) , String.format("%.16f", wordKeyTemp.getCompPower().get(i)));
-            System.out.println();
-        }
-        System.setOut(out);
+//        //输出最终结果
+//        PrintStream out = System.out;
+//        String Result = pa.wordResult + wordKeyTemp.getKeyword() + pa.txt;
+//        PrintStream ps1 = new PrintStream(Result);/*保存屏幕信息*/
+//        System.setOut(ps1);
+//        System.out.println("[" + wordKeyTemp.getKeyword() + "] 对应竞争性关键字的竞争度排序如下：");
+//        System.out.println();
+//        System.out.printf("%-20s%-20s%-20s","中介关键字","竞争关键字","竞争度");
+//        System.out.println();
+//        Double t;
+//        String x,y;
+//        //排序
+//        for(int i = 0; i < num - 1; i++) {
+//            for(int j = 0; j < num - i - 1; j++) {
+//                if(wordKeyTemp.getCompPower().get(j) < wordKeyTemp.getCompPower().get(j+1)) {
+//                    //替换竞争度
+//                    t = wordKeyTemp.getCompPower().get(j);
+//                    wordKeyTemp.getCompPower().set(j,wordKeyTemp.getCompPower().get(j+1));
+//                    wordKeyTemp.getCompPower().set(j+1,t);
+//                    //替换中介关键字
+//                    x = wordKeyTemp.getMidkey().get(j);
+//                    wordKeyTemp.getMidkey().set(j,wordKeyTemp.getMidkey().get(j+1));
+//                    wordKeyTemp.getMidkey().set(j+1,x);
+//                    //替换竞争关键字
+//                    y = wordKeyTemp.getCompkey().get(j);
+//                    wordKeyTemp.getCompkey().set(j,wordKeyTemp.getCompkey().get(j+1));
+//                    wordKeyTemp.getCompkey().set(j+1,y);
+//                }
+//            }
+//        }
+//        for(int i = 0; i < num; i++) {
+//            System.out.printf("%7s%27s%25s", wordKeyTemp.getMidkey().get(i) , wordKeyTemp.getCompkey().get(i) , String.format("%.16f", wordKeyTemp.getCompPower().get(i)));
+//            System.out.println();
+//        }
+//       System.setOut(out);
     }
 
 }

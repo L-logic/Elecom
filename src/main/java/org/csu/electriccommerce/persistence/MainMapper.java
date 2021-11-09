@@ -1,10 +1,14 @@
 package org.csu.electriccommerce.persistence;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.csu.electriccommerce.entity.Keyword;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
+
 @Repository
 public interface MainMapper {
-    void addKeyword();
+    void addKeyword(String keyword,String compword);
+
+    Keyword getcomp(String keyword);
+
 }
