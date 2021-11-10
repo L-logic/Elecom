@@ -125,8 +125,8 @@ public class Algorithm {
             ka = 0;
             sa = 0;
         }
-        wordKeyTemp.setCompPoint(CompPowerList);
-        System.out.println(wordKeyTemp.getCompPoint());
+        wordKeyTemp.setCompPower(CompPowerList);
+        System.out.println(wordKeyTemp.getCompPower());
 
         //输出最终结果
         PrintStream out = System.out;
@@ -142,11 +142,11 @@ public class Algorithm {
         //排序
         for(int i = 0; i < num - 1; i++) {
             for(int j = 0; j < num - i - 1; j++) {
-                if(wordKeyTemp.getCompPoint().get(j) < wordKeyTemp.getCompPoint().get(j+1)) {
+                if(wordKeyTemp.getCompPower().get(j) < wordKeyTemp.getCompPower().get(j+1)) {
                     //替换竞争度
-                    t = wordKeyTemp.getCompPoint().get(j);
-                    wordKeyTemp.getCompPoint().set(j,wordKeyTemp.getCompPoint().get(j+1));
-                    wordKeyTemp.getCompPoint().set(j+1,t);
+                    t = wordKeyTemp.getCompPower().get(j);
+                    wordKeyTemp.getCompPower().set(j,wordKeyTemp.getCompPower().get(j+1));
+                    wordKeyTemp.getCompPower().set(j+1,t);
                     //替换中介关键字
                     x = wordKeyTemp.getMidkey().get(j);
                     wordKeyTemp.getMidkey().set(j,wordKeyTemp.getMidkey().get(j+1));
@@ -159,7 +159,7 @@ public class Algorithm {
             }
         }
         for(int i = 0; i < num; i++) {
-            System.out.printf("%7s%27s%25s", wordKeyTemp.getMidkey().get(i) , wordKeyTemp.getCompkey().get(i) , String.format("%.16f", wordKeyTemp.getCompPoint().get(i)));
+            System.out.printf("%7s%27s%25s", wordKeyTemp.getMidkey().get(i) , wordKeyTemp.getCompkey().get(i) , String.format("%.16f", wordKeyTemp.getCompPower().get(i)));
             System.out.println();
         }
        System.setOut(out);

@@ -20,4 +20,9 @@ class ElectriccommerceApplicationTests {
         Keyword baby = mainService.searchcompword("宝宝");
     }
 
+    @Test
+    void getcount(){
+        mainService.getCount("冰箱");
+    }
+
 }

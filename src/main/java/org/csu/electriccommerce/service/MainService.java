@@ -48,7 +48,7 @@ public class MainService {
             e.printStackTrace();
         }
         ArrayList compwords = kw.getCompkey();
-        ArrayList comppoint = kw.getCompPoint();
+        ArrayList comppoint = kw.getCompPower();
         for (int i = 0; i < compwords.size(); i++) {
             mainMapper.addKeyword(kw.getKeyword(), (String) compwords.get(i));
         }

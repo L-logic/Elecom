@@ -34,13 +34,21 @@ public class MainController {
             Keyword keyword = new Keyword();
             keyword.setKeyword(word);
             ArrayList<Hunhe> arrayList = new ArrayList<>();
-
+            ArrayList<String> midkey = new ArrayList<>();
+            ArrayList<String> compkey = new ArrayList<>();
+            ArrayList<Double> compPower = new ArrayList<>();
             //先判断数据库中有没有该词
-            if (mainService.findComp(keyword.getKeyword()).size() != 0){
-                for (int i = 0; i < mainService.getCount(keyword.getKeyword()); i++) {
+            if (mainService.findComp(keyword.getKeyword()).size() == 10){
+                for (int i = 0; i < 10; i++) {
                     Hunhe hunhe = mainService.findComp(keyword.getKeyword()).get(i);
                     arrayList.add(hunhe);
+                    midkey.add(hunhe.getMidkey());
+                    compkey.add(hunhe.getCompkey());
+                    compPower.add(hunhe.getCompPower());
                 }
+                keyword.setMidkey(midkey);
+                keyword.setCompkey(compkey);
+                keyword.setCompPower(compPower);
             }else {
                 PathClass pa = new PathClass();
                 try {
@@ -56,13 +64,12 @@ public class MainController {
                     e.printStackTrace();
                 }
 
-
                 for (int i = 0; i < keyword.getMidkey().size(); i++) {
                     Hunhe hunhe = new Hunhe();
                     hunhe.setKeyword(keyword.getKeyword());
                     hunhe.setMidkey(keyword.getMidkey().get(i));
                     hunhe.setCompkey(keyword.getCompkey().get(i));
-                    hunhe.setCompPower(keyword.getCompPoint().get(i));
+                    hunhe.setCompPower(keyword.getCompPower().get(i));
                     if (mainService.findComp(keyword.getKeyword()).size() < 10){
                         mainService.addHunhe(hunhe);
                     }
