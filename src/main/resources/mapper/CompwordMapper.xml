@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.csu.electriccommerce.persistence.CompwordMapper">
+
+    <insert id="insertCompwordSet" parameterType="org.csu.electriccommerce.entity.CompwordSet">
+        insert into compword
+        (keyword,midkey,compkey,comppower)
+        values
+        (#{keyword},#{midkey},#{compkey},#{compPower})
+    </insert>
+
+    <delete id="deleteCompwordSet" parameterType="String">
+        delete from compword where keyword = #{keyword}
+    </delete>
+
+    <update id="updateCompwordSet" parameterType="org.csu.electriccommerce.entity.CompwordSet">
+        update compword set
+        midkey = #{midkey},
+        compkey = #{compkey},
+        comppower = #{compPower}
+        where id = #{id}
+    </update>
+
+    <select id="getSetList" resultType="org.csu.electriccommerce.entity.CompwordSet">
+        select
+        id,
+        keyword,
+        midkey,
+        compkey,
+        comppower
+        from compword
+        where keyword = #{keyword}
+    </select>
+
+    <select id="getSetById" resultType="org.csu.electriccommerce.entity.CompwordSet">
+        select
+        id,
+        keyword,
+        midkey,
+        compkey,
+        comppower
+        from compword
+        where id = #{id}
+    </select>
+
+    <select id="getSetByKeyAndComp" resultType="org.csu.electriccommerce.entity.CompwordSet">
+        select
+        id,
+        keyword,
+        midkey,
+        compkey,
+        comppower
+        from compword
+        where keyword = #{keyword}
+        and compkey = #{compkey}
+    </select>
+
+    <select id="getKeywordList" resultType="String">
+        select distinct
+        keyword,
+        from compword
+    </select>
+
+
+</mapper>
