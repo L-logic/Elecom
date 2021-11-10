@@ -11,7 +11,7 @@ layui.config({
 	menu: "menu",		// 数据菜单组件
 	frame: "frame", 	// 内容页面组件
 	tab: "tab",			// 多选项卡组件
-	echarts: "echarts", // 数据图表组件
+	echarts3: "echarts", // 数据图表组件
 	echartsTheme: "echartsTheme", // 数据图表主题
 	hash: "hash",		// 数据加密组件
 	select: "select",	// 下拉多选组件
