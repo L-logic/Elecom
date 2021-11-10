@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.csu.electriccommerce.persistence.MidDataMapper">
+    <insert id="insertWordApart" >
+        insert into wordapart
+        values
+        (#{s},#{s1},#{s2},#{s3},#{s4},#{s5},#{s6},#{s7})
+    </insert>
+
+    <insert id="insertFrequencis" >
+        insert into frequencis
+        values
+        (#{data},#{s})
+    </insert>
+
+    <insert id="insertMidKeyword" >
+        insert into midkeyword
+        values
+        (#{keyword},#{s},#{s1},#{s2},#{s3},#{s4},#{s5},#{s6},#{s7},#{s8},#{s9})
+    </insert>
+
+    <insert id="insertCompApart" >
+        insert into compapart
+        values
+        (#{s},#{s1},#{s2},#{s3},#{s4},#{s5},#{s6},#{s7})
+    </insert>
+
+    <insert id="insertCompFrequencis" >
+        insert into compfrequencis
+        values
+        (#{data},#{s})
+    </insert>
+
+    <insert id="insertRelated" >
+        insert into related
+        values
+        (#{data})
+    </insert>
+
+    <insert id="insertMidRelated" >
+        insert into midrelated
+        values
+        (#{data})
+    </insert>
+
+    <delete id="deleteWordApart" >
+        delete from wordapart
+    </delete>
+
+    <delete id="deleteFrequencis" >
+        delete from frequencis
+    </delete>
+
+    <delete id="deleteMidKeyword" parameterType="String">
+        delete from midkeyword where keyword = #{keyword}
+    </delete>
+
+    <delete id="deleteCompApart" >
+        delete from compapart
+    </delete>
+
+    <delete id="deleteCompFrequencis" >
+        delete from compfrequencis
+    </delete>
+
+    <delete id="deleteRelated" >
+        delete from related
+    </delete>
+
+    <delete id="deleteMidRelated" >
+        delete from midrelated
+    </delete>
+
+    <select id="selectMidKeyword" parameterType="String" resultType="String">
+        select
+        keyword
+        from midkeyword
+        where keyword = #{keyword}
+    </select>
+
+</mapper>
