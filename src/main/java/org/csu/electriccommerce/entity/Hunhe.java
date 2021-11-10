@@ -9,5 +9,5 @@ public class Hunhe {
     private String keyword;
     private String midkey;
     private String compkey;
-    private String compPower;
+    private Double compPower;
 }
