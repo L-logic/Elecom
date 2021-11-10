@@ -6,7 +6,6 @@ import java.util.ArrayList;
 
 @Data
 public class Keyword {
-
     private String keyword;
     private ArrayList<String> midkey;
     private ArrayList<String> compkey;

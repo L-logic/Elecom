@@ -30,30 +30,30 @@ public class MainService {
         return mainMapper.findComp(keyword);
     }
 
-    public Keyword searchcompword(String keyword){
-
-        Keyword kw = new Keyword();
-        kw.setKeyword(keyword);
-        PathClass pa = new PathClass();
-        try {
-            NewCleanFileClass.Clean(pa.wordInNew, pa.wordOut,10);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        int num = 10;   //设定选取竞争关键字的个数
-
-        try {
-            new Algorithm().algorithm(kw,num);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        ArrayList compwords = kw.getCompkey();
-        ArrayList comppoint = kw.getCompPower();
-        for (int i = 0; i < compwords.size(); i++) {
-            mainMapper.addKeyword(kw.getKeyword(), (String) compwords.get(i));
-        }
-        Keyword cw = mainMapper.getcomp(kw.getKeyword());
-    return cw;
-    }
+//    public Keyword searchcompword(String keyword){
+//
+//        Keyword kw = new Keyword();
+//        kw.setKeyword(keyword);
+//        PathClass pa = new PathClass();
+//        try {
+//            NewCleanFileClass.Clean(pa.wordInNew, pa.wordOut,10);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        int num = 10;   //设定选取竞争关键字的个数
+//
+//        try {
+//            new Algorithm().algorithm(kw,num);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        ArrayList compwords = kw.getCompkey();
+//        ArrayList comppoint = kw.getCompPoint();
+//        for (int i = 0; i < compwords.size(); i++) {
+//            mainMapper.addKeyword(kw.getKeyword(), (String) compwords.get(i));
+//        }
+//        Keyword cw = mainMapper.getcomp(kw.getKeyword());
+//    return cw;
+//    }
 
 }

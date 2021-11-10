@@ -1,7 +1,10 @@
 package org.csu.electriccommerce.controller;
 
+import org.csu.electriccommerce.entity.Grade;
 import org.csu.electriccommerce.entity.Hunhe;
 import org.csu.electriccommerce.entity.Keyword;
+import org.csu.electriccommerce.entity.Rate;
+import org.csu.electriccommerce.service.GradeService;
 import org.csu.electriccommerce.service.MainService;
 import org.csu.electriccommerce.tool.company.NewCleanFileClass;
 import org.csu.electriccommerce.tool.compkey.Algorithm;
@@ -11,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
@@ -24,6 +28,7 @@ public class MainController {
 
     @Autowired
     private MainService mainService;
+    private GradeService gradeService;
     //新增种子关键字
     @RequestMapping("/addKeyword")
     public String addKeyword(
@@ -63,6 +68,7 @@ public class MainController {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+
 
                 for (int i = 0; i < keyword.getMidkey().size(); i++) {
                     Hunhe hunhe = new Hunhe();
@@ -143,4 +149,19 @@ public class MainController {
         return "index";
     }
 
+    @RequestMapping("/addgrade")
+    public void addgrade(@RequestParam("value") float value , Model model ){
+
+    }
+
+    @RequestMapping("/setgrade")
+    @ResponseBody
+    public Rate setgrade(){
+        Rate rate = new Rate();
+        rate.setCode(0);
+        ArrayList<Grade> data = gradeService.getRateData("宝宝");
+        rate.setData(data);
+        rate.setCount(data.size());
+        return rate;
+    }
 }
