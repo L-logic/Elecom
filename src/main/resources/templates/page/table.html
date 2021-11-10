@@ -84,32 +84,133 @@
         </div>
     </div>
 </div>
-
-<!--  展示总体结果的表格，修改数据通过最下方的script修改url进行修改-->
-<div class="site-section bg-light">
-    <div class="layui-card" style="margin-left: 40px;margin-right: 40px;">
-        <div class="layui-card">
-            <div class="layui-card-body">
-                <div id="wordcloud_echarts" style="min-height:400px;"></div>
+<div class="site-section">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-7 text-center" data-aos="fade-up" data-aos-delay="100">
+                <h1 class="font-weight-light text-primary">Word Cloud</h1>
+                <p class="color-black-opacity-5">Competitive keywords play an important role in all aspects of life</p>
+            </div>
+        </div>
+        <div class="layui-card" style="margin-left: 40px;margin-right: 40px;">
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    <div id="wordcloud_echarts" style="min-height:400px;"></div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="layui-card" style="margin-left: 40px;margin-right: 40px;">
-        <div class="layui-card">
-            <div class="layui-card-body">
-                <div id="line3" style="min-height:400px;"></div>
+</div>
+<div class="site-section">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-7 text-center" data-aos="fade-up" data-aos-delay="100">
+                <h1 class="font-weight-light text-primary">CompKey Result</h1>
+                <p class="color-black-opacity-5">Competitive keywords play an important role in all aspects of life</p>
             </div>
         </div>
-        <div class="layui-card">
-            <div class="layui-card-body">
-                <div id="column1" style="min-height:400px;"></div>
+        <div class="layui-card" style="margin-left: 40px;margin-right: 40px;">
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    <table id="test" lay-filter="test"></table>
+                </div>
             </div>
         </div>
-        <div class="layui-card-body">
-            <p><h1 class="h1 text-black mb-3" style="margin: 20px">竞争关键字的感知评估</h1></p>
-            <p><h3 class="h3 text-black mb-3" style="margin: 20px">说明：请评价如下种子关键字与推荐关键字之间的语义竞争水平，1星-非常低，5星-非常高</h3></p>
-            <table id="test" lay-filter="test"></table>
+    </div>
+</div>
+<div class="site-section">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-7 text-center" data-aos="fade-up" data-aos-delay="100">
+                <h1 class="font-weight-light text-primary">CompKey Compare</h1>
+                <p class="color-black-opacity-5">Competitive keywords play an important role in all aspects of life</p>
+            </div>
         </div>
+        <div class="layui-card" style="margin-left: 40px;margin-right: 40px;">
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    <div id="column1" style="min-height:400px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="site-section">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-7 text-center" data-aos="fade-up" data-aos-delay="100">
+                <h1 class="font-weight-light text-primary">5 Times of Scoring Results</h1>
+                <p class="color-black-opacity-5">Competitive keywords play an important role in all aspects of life</p>
+            </div>
+        </div>
+        <div class="layui-card" style="margin-left: 40px;margin-right: 40px;">
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    <div id="line3" style="min-height:400px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="site-section">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-7 text-center" data-aos="fade-up" data-aos-delay="100">
+                <h1 class="font-weight-light text-primary">Your Evaluate</h1>
+                <p class="color-black-opacity-5">Competitive keywords play an important role in all aspects of life</p>
+            </div>
+        </div>
+        <h2 class="h2 text-black">您的感知评价</h2>
+        <h4 class="h4 text-black">请为竞争关键字搜索结果打分：打分1-5分，1-非常低，5-非常高</h4>
+        <form action="#" method="post">
+            <table class="layui-table" rules="none">
+                <tr>
+                    <td>怀孕</td>
+                    <td><input type="text" placeholder="Please evaluate from 1-5" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>奶粉</td>
+                    <td><input type="text" placeholder="Please evaluate from 1-5" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>医院</td>
+                    <td><input type="text" placeholder="Please evaluate from 1-5" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>饮食</td>
+                    <td><input type="text" placeholder="Please evaluate from 1-5" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>健康</td>
+                    <td><input type="text" placeholder="Please evaluate from 1-5" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>衣服</td>
+                    <td><input type="text" placeholder="Please evaluate from 1-5" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>妈妈</td>
+                    <td><input type="text" placeholder="Please evaluate from 1-5" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>爸爸</td>
+                    <td><input type="text" placeholder="Please evaluate from 1-5" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>学习</td>
+                    <td><input type="text" placeholder="Please evaluate from 1-5" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>音乐</td>
+                    <td><input type="text" placeholder="Please evaluate from 1-5" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center" style="background-color: #009688">
+                        <button class="btn btn-primary text-white" type="submit">Submit</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
     </div>
 </div>
 
@@ -212,8 +313,8 @@
 <script src="../../static/component/pear/pear.js"></script>
 <script src="../../static/script/line3.js"></script>
 <script src="../../static/script/column1.js"></script>
-<script src="../js/echart3.js"></script>
-<script src="../js/echarts-wordcloud.js"></script>
+<script src="../../static/js/echart3.js"></script>
+<script src="../../static/js/echarts-wordcloud.js"></script>
 <script>
     layui.use(['table', 'form', 'jquery', 'drawer', 'dropdown','rate'], function() {
         let table = layui.table,
@@ -364,18 +465,26 @@
             rotationRange: [0, 0],
             rotationStep: 45,
             gridSize: 8,
-            shape: 'pentagon',
+            shape: 'smooth',
             width: '100%',
             height: '100%',
             textStyle: {
                 normal: {
+                    fontFamily: 'sans-serif',
+                    //fontWeight: 'bold',
+                    // Color can be a callback function or a color string
                     color: function () {
+                        // Random color
                         return 'rgb(' + [
                             Math.round(Math.random() * 160),
                             Math.round(Math.random() * 160),
                             Math.round(Math.random() * 160)
-                        ].join(',') + ')';
+                        ].join(',') + ')';//字体的随机颜色
                     }
+                },
+                emphasis: {//鼠标移入的特效样式
+                    shadowBlur: 10,
+                    shadowColor: '#d1e5fd'
                 }
             },
             data: keywords
