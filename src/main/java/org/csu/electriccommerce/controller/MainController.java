@@ -33,31 +33,43 @@ public class MainController {
             System.out.println(word);
             Keyword keyword = new Keyword();
             keyword.setKeyword(word);
-
-            PathClass pa = new PathClass();
-            try {
-                NewCleanFileClass.Clean(pa.wordInNew, pa.wordOut,10);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            int num = 10;   //设定选取竞争关键字的个数
-
-            try {
-                new Algorithm().algorithm(keyword,num);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
             ArrayList<Hunhe> arrayList = new ArrayList<>();
-            for (int i = 0; i < keyword.getMidkey().size(); i++) {
-                Hunhe hunhe = new Hunhe();
-                hunhe.setKeyword(keyword.getKeyword());
-                hunhe.setMidkey(keyword.getMidkey().get(i));
-                hunhe.setCompkey(keyword.getCompkey().get(i));
-                hunhe.setCompPower(keyword.getCompPoint().get(i));
-                mainService.addHunhe(hunhe);
-                arrayList.add(hunhe);
+
+            //先判断数据库中有没有该词
+            if (mainService.findComp(keyword.getKeyword()).size() != 0){
+                for (int i = 0; i < mainService.getCount(keyword.getKeyword()); i++) {
+                    Hunhe hunhe = mainService.findComp(keyword.getKeyword()).get(i);
+                    arrayList.add(hunhe);
+                }
+            }else {
+                PathClass pa = new PathClass();
+                try {
+                    NewCleanFileClass.Clean(pa.wordInNew, pa.wordOut,10);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                int num = 10;   //设定选取竞争关键字的个数
+
+                try {
+                    new Algorithm().algorithm(keyword,num);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+
+                for (int i = 0; i < keyword.getMidkey().size(); i++) {
+                    Hunhe hunhe = new Hunhe();
+                    hunhe.setKeyword(keyword.getKeyword());
+                    hunhe.setMidkey(keyword.getMidkey().get(i));
+                    hunhe.setCompkey(keyword.getCompkey().get(i));
+                    hunhe.setCompPower(keyword.getCompPoint().get(i));
+                    if (mainService.findComp(keyword.getKeyword()).size() < 10){
+                        mainService.addHunhe(hunhe);
+                    }
+                    arrayList.add(hunhe);
+                }
             }
+
             System.out.println(arrayList);
             model.addAttribute(keyword);
             model.addAttribute("arrayList",arrayList);

@@ -22,6 +22,14 @@ public class MainService {
         mainMapper.addHunhe(hunhe);
     }
 
+    public int getCount(String keyword){
+        return mainMapper.getCount(keyword);
+    }
+
+    public ArrayList<Hunhe> findComp(String keyword){
+        return mainMapper.findComp(keyword);
+    }
+
     public Keyword searchcompword(String keyword){
 
         Keyword kw = new Keyword();

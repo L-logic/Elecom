@@ -9,8 +9,18 @@
     </insert>
 
     <insert id="addHunhe" parameterType="org.csu.electriccommerce.entity.Hunhe">
-        INSERT INTO keyword(keyword,midkey,compkey,comppower) VALUES (#{keyword},#{midkey},#{compkey},#{compPower});
+        INSERT INTO compword(keyword,midkey,compkey,comppower) VALUES (#{keyword},#{midkey},#{compkey},#{compPower});
     </insert>
+
+    <select id="getCount" parameterType="String" resultType="int">
+        SELECT count(keyword = #{keyword}) FROM compword;
+    </select>
+
+    <select id="findComp" parameterType="String" resultType="org.csu.electriccommerce.entity.Hunhe">
+        SELECT keyword,midkey,compkey,comppower
+        FROM compword
+        where keyword = #{keyword}
+    </select>
 
     <select id="getcomp" parameterType="String" resultType="String">
         SELECT
