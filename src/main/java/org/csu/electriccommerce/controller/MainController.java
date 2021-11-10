@@ -2,9 +2,11 @@ package org.csu.electriccommerce.controller;
 
 import org.csu.electriccommerce.entity.Hunhe;
 import org.csu.electriccommerce.entity.Keyword;
+import org.csu.electriccommerce.service.MainService;
 import org.csu.electriccommerce.tool.company.NewCleanFileClass;
 import org.csu.electriccommerce.tool.compkey.Algorithm;
 import org.csu.electriccommerce.tool.datafile.PathClass;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +22,8 @@ import java.util.ArrayList;
 @RequestMapping("/main")
 public class MainController {
 
+    @Autowired
+    private MainService mainService;
     //新增种子关键字
     @RequestMapping("/addKeyword")
     public String addKeyword(
@@ -51,6 +55,7 @@ public class MainController {
                 hunhe.setMidkey(keyword.getMidkey().get(i));
                 hunhe.setCompkey(keyword.getCompkey().get(i));
                 hunhe.setCompPower(keyword.getCompPoint().get(i));
+                mainService.addHunhe(hunhe);
                 arrayList.add(hunhe);
             }
             System.out.println(arrayList);

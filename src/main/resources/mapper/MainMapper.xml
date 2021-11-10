@@ -6,8 +6,12 @@
     (keyword,compword)
     VALUES
     (#{keyword},#{compword})
-
     </insert>
+
+    <insert id="addHunhe" parameterType="org.csu.electriccommerce.entity.Hunhe">
+        INSERT INTO keyword(keyword,midkey,compkey,comppower) VALUES (#{keyword},#{midkey},#{compkey},#{compPower});
+    </insert>
+
     <select id="getcomp" parameterType="String" resultType="String">
         SELECT
         compword,

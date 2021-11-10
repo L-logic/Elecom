@@ -1,6 +1,6 @@
 package org.csu.electriccommerce.service;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import org.csu.electriccommerce.entity.Hunhe;
 import org.csu.electriccommerce.entity.Keyword;
 import org.csu.electriccommerce.persistence.MainMapper;
 import org.csu.electriccommerce.tool.company.NewCleanFileClass;
@@ -14,8 +14,13 @@ import java.util.ArrayList;
 
 @Service
 public class MainService {
+
     @Autowired
     private MainMapper mainMapper;
+
+    public void addHunhe(Hunhe hunhe){
+        mainMapper.addHunhe(hunhe);
+    }
 
     public Keyword searchcompword(String keyword){
 
