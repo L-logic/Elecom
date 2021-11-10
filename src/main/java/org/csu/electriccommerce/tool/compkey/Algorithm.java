@@ -159,8 +159,10 @@ public class Algorithm {
             }
         }
         for(int i = 0; i < num; i++) {
-            System.out.printf("%7s%27s%25s", wordKeyTemp.getMidkey().get(i) , wordKeyTemp.getCompkey().get(i) , String.format("%.16f", wordKeyTemp.getCompPower().get(i)));
-            System.out.println();
+//            System.out.printf("%7s%27s%25s", wordKeyTemp.getMidkey().get(i) , wordKeyTemp.getCompkey().get(i) , String.format("%.16f", wordKeyTemp.getCompPoint().get(i)));
+//            System.out.println();
+
+            System.out.println( wordKeyTemp.getMidkey().get(i) + "\t" + wordKeyTemp.getCompkey().get(i) + "\t" + String.format("%.16f", wordKeyTemp.getCompPoint().get(i)));
         }
        System.setOut(out);
     }
