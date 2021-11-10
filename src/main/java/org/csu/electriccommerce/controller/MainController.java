@@ -1,7 +1,10 @@
 package org.csu.electriccommerce.controller;
 
+import org.csu.electriccommerce.entity.Grade;
 import org.csu.electriccommerce.entity.Hunhe;
 import org.csu.electriccommerce.entity.Keyword;
+import org.csu.electriccommerce.entity.Rate;
+import org.csu.electriccommerce.service.GradeService;
 import org.csu.electriccommerce.service.MainService;
 import org.csu.electriccommerce.tool.company.NewCleanFileClass;
 import org.csu.electriccommerce.tool.compkey.Algorithm;
@@ -11,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
@@ -24,6 +28,7 @@ public class MainController {
 
     @Autowired
     private MainService mainService;
+    private GradeService gradeService;
     //新增种子关键字
     @RequestMapping("/addKeyword")
     public String addKeyword(
@@ -34,13 +39,21 @@ public class MainController {
             Keyword keyword = new Keyword();
             keyword.setKeyword(word);
             ArrayList<Hunhe> arrayList = new ArrayList<>();
-
+            ArrayList<String> midkey = new ArrayList<>();
+            ArrayList<String> compkey = new ArrayList<>();
+            ArrayList<Double> compPower = new ArrayList<>();
             //先判断数据库中有没有该词
-            if (mainService.findComp(keyword.getKeyword()).size() != 0){
-                for (int i = 0; i < mainService.getCount(keyword.getKeyword()); i++) {
+            if (mainService.findComp(keyword.getKeyword()).size() == 10){
+                for (int i = 0; i < 10; i++) {
                     Hunhe hunhe = mainService.findComp(keyword.getKeyword()).get(i);
                     arrayList.add(hunhe);
+                    midkey.add(hunhe.getMidkey());
+                    compkey.add(hunhe.getCompkey());
+                    compPower.add(hunhe.getCompPower());
                 }
+                keyword.setMidkey(midkey);
+                keyword.setCompkey(compkey);
+                keyword.setCompPower(compPower);
             }else {
                 PathClass pa = new PathClass();
                 try {
@@ -62,7 +75,7 @@ public class MainController {
                     hunhe.setKeyword(keyword.getKeyword());
                     hunhe.setMidkey(keyword.getMidkey().get(i));
                     hunhe.setCompkey(keyword.getCompkey().get(i));
-                    hunhe.setCompPower(keyword.getCompPoint().get(i));
+                    hunhe.setCompPower(keyword.getCompPower().get(i));
                     if (mainService.findComp(keyword.getKeyword()).size() < 10){
                         mainService.addHunhe(hunhe);
                     }
@@ -136,4 +149,19 @@ public class MainController {
         return "index";
     }
 
+    @RequestMapping("/addgrade")
+    public void addgrade(@RequestParam("value") float value , Model model ){
+
+    }
+
+    @RequestMapping("/setgrade")
+    @ResponseBody
+    public Rate setgrade(){
+        Rate rate = new Rate();
+        rate.setCode(0);
+        ArrayList<Grade> data = gradeService.getRateData("宝宝");
+        rate.setData(data);
+        rate.setCount(data.size());
+        return rate;
+    }
 }
