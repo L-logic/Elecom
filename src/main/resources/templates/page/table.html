@@ -368,7 +368,7 @@
             ]
         ]
 
-        console.log("hhhhhhhhh")
+        //console.log("hhhhhhhhh")
 
         //修改这里的url可以传后台数据
         table.render({
@@ -388,7 +388,7 @@
             //回调函数，在里面设置rate.render(),给rate循环赋值
             even:true,//隔行变色
             done:function(res){
-                console.log(res.data);
+                //console.log(res.data);
                 var data = res.data;//返回的json中data数据
                 var that = this.elem.next();
                 table_data = data;//全局变量，用在后面排序，与这个循环无关。

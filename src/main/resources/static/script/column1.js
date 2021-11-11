@@ -7,7 +7,7 @@ layui.use(['echarts'], function() {
     var series1 = [];
     var series2 = [];
     var series3 = [];
-    console.log("xxxxxxxxxxxxxx")
+    //console.log("xxxxxxxxxxxxxx")
 
     $.ajax({
         type: 'post',
@@ -18,7 +18,7 @@ layui.use(['echarts'], function() {
         url: 'http://localhost:8888/grade/setGrade',//请求数据的地址
         dataType: "json",        //返回数据形式为json
         success: function (result) {
-            console.log(result)
+            // console.log(result)
             $.each(result.data, function (index, item) {
                 console.log(item);
                 var temp1 = item.compPower;

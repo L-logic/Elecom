@@ -52,9 +52,9 @@ public class GradeService {
             cg.setCompkey(b.get(i).getCompkey());
             ArrayList<Float> grade = gradeMapper.findTopFiveGrade(keyword,comkey);
             if(grade.size()<5){
-            int num = grade.size();
+                int num = grade.size();
                 for (int j = 0; j < 5-num; j++) {
-                    grade.add((float) 0.0);
+                    grade.add((float) 3.0);
                 }
             }
             cg.setCpgrades(grade);
