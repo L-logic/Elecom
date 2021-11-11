@@ -1,5 +1,6 @@
 package org.csu.electriccommerce.service;
 
+import org.csu.electriccommerce.entity.CompkeyAndGrade;
 import org.csu.electriccommerce.entity.Grade;
 import org.csu.electriccommerce.entity.Hunhe;
 import org.csu.electriccommerce.persistence.GradeMapper;
@@ -39,5 +40,26 @@ public class GradeService {
 
     public void addGrade(Hunhe hunhe, float grade){
         gradeMapper.addGrace(hunhe,grade);
+    }
+
+    public ArrayList<CompkeyAndGrade> getTopFiveGrade(String keyword){
+        ArrayList<CompkeyAndGrade> data = new ArrayList<>();
+        ArrayList<Hunhe> b = mainMapper.findComp(keyword);
+
+        for (int i = 0; i < b.size(); i++) {
+            CompkeyAndGrade cg = new CompkeyAndGrade();
+            String comkey = b.get(i).getCompkey();
+            cg.setCompkey(b.get(i).getCompkey());
+            ArrayList<Float> grade = gradeMapper.findTopFiveGrade(keyword,comkey);
+            if(grade.size()<5){
+            int num = grade.size();
+                for (int j = 0; j < 5-num; j++) {
+                    grade.add((float) 0.0);
+                }
+            }
+            cg.setCpgrades(grade);
+            data.add(cg);
+        }
+        return data;
     }
 }

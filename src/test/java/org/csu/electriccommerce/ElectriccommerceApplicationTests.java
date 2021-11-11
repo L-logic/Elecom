@@ -3,10 +3,7 @@ package org.csu.electriccommerce;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.csu.electriccommerce.controller.MainController;
-import org.csu.electriccommerce.entity.Grade;
-import org.csu.electriccommerce.entity.Hunhe;
-import org.csu.electriccommerce.entity.Keyword;
-import org.csu.electriccommerce.entity.Rate;
+import org.csu.electriccommerce.entity.*;
 import org.csu.electriccommerce.persistence.GradeMapper;
 import org.csu.electriccommerce.persistence.MainMapper;
 import org.csu.electriccommerce.service.GradeService;
@@ -75,6 +72,21 @@ class ElectriccommerceApplicationTests {
         String str = null;
         try {
             str = objectMapper.writeValueAsString(rate);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        System.out.println(str);
+    }
+
+    @Test
+    void getTopFive(){
+
+        ArrayList<CompkeyAndGrade> data = gradeService.getTopFiveGrade("宝宝");
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        String str = null;
+        try {
+            str = objectMapper.writeValueAsString(data);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }

@@ -15,4 +15,13 @@
         VALUES
         (#{keyword},#{compkey},#{grade,javaType=FLOAT,jdbcType=FLOAT})
     </insert>
+
+    <select id="findTopFiveGrade" parameterType="String" resultType="Float">
+        SELECT cpgrade AS satisfaction
+        FROM grade
+        where keyword = #{keyword}
+        AND compkey = #{compkey}
+        ORDER BY id DESC
+        limit 5
+    </select>
 </mapper>

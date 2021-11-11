@@ -1,5 +1,8 @@
 package org.csu.electriccommerce.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.csu.electriccommerce.entity.CompkeyAndGrade;
 import org.csu.electriccommerce.entity.Grade;
 import org.csu.electriccommerce.entity.Rate;
 import org.csu.electriccommerce.service.GradeService;
@@ -41,5 +44,12 @@ public class GradeController {
             rate.setCount(data.size());
         }
         return rate;
+    }
+
+    @RequestMapping("/setLine")
+    @ResponseBody
+    public ArrayList<CompkeyAndGrade> setLine(@RequestParam("word") String word){
+        ArrayList<CompkeyAndGrade> data = gradeService.getTopFiveGrade(word);
+        return data;
     }
 }
