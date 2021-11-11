@@ -165,50 +165,9 @@
         <h4 class="h4 text-black">请为竞争关键字搜索结果打分：打分1-5分，1-非常低，5-非常高</h4>
         <form action="#" method="post">
             <table class="layui-table" rules="none">
-                <tr>
-                    <td align="center">怀孕</td>
-                    <td><input type="text" placeholder="Please evaluate from 1-5" class="form-control"></td>
-                </tr>
-                <tr>
-                    <td align="center">奶粉</td>
-                    <td><input type="text" placeholder="Please evaluate from 1-5" class="form-control"></td>
-                </tr>
-                <tr>
-                    <td align="center">医院</td>
-                    <td><input type="text" placeholder="Please evaluate from 1-5" class="form-control"></td>
-                </tr>
-                <tr>
-                    <td align="center">饮食</td>
-                    <td><input type="text" placeholder="Please evaluate from 1-5" class="form-control"></td>
-                </tr>
-                <tr>
-                    <td align="center">健康</td>
-                    <td><input type="text" placeholder="Please evaluate from 1-5" class="form-control"></td>
-                </tr>
-                <tr>
-                    <td align="center">衣服</td>
-                    <td><input type="text" placeholder="Please evaluate from 1-5" class="form-control"></td>
-                </tr>
-                <tr>
-                    <td align="center">妈妈</td>
-                    <td><input type="text" placeholder="Please evaluate from 1-5" class="form-control"></td>
-                </tr>
-                <tr>
-                    <td align="center">爸爸</td>
-                    <td><input type="text" placeholder="Please evaluate from 1-5" class="form-control"></td>
-                </tr>
-                <tr>
-                    <td align="center">学习</td>
-                    <td><input type="text" placeholder="Please evaluate from 1-5" class="form-control"></td>
-                </tr>
-                <tr>
-                    <td align="center">音乐</td>
-                    <td><input type="text" placeholder="Please evaluate from 1-5" class="form-control"></td>
-                </tr>
-                <tr>
-                    <td colspan="2" align="center" style="background-color: #009688">
-                        <button class="btn btn-primary text-white" type="submit">Submit</button>
-                    </td>
+                <tr th:each="item,iterStat:${arrayList}">
+                    <td align="center" th:text="${item.compkey}">怀孕</td>
+                    <td><input type="text" placeholder="Please evaluate from 1-5" class="form-control" th:name="'xing'+${iterStat.index}"></td>
                 </tr>
             </table>
         </form>
