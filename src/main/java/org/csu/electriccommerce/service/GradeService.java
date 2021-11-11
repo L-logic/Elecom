@@ -19,8 +19,7 @@ public class GradeService {
 
     public ArrayList<Grade> getRateData(String keyword){
         ArrayList<Grade> data = new ArrayList<>();
-        ArrayList<Hunhe> b = new ArrayList<>();
-        b = mainMapper.findComp(keyword);
+        ArrayList<Hunhe> b = mainMapper.findComp(keyword);
 
         for (int i = 0; i < b.size(); i++) {
             Grade gd = new Grade();
@@ -28,13 +27,17 @@ public class GradeService {
             gd.setCompkey(b.get(i).getCompkey());
             gd.setMidkey(b.get(i).getMidkey());
             gd.setCompPower(b.get(i).getCompPower());
-            gd.setSatisfaction(gradeMapper.getgrade(gd.getCompkey()));
+            if (gradeMapper.getGrade(keyword,gd.getCompkey()) == null){
+                gd.setSatisfaction(3);
+            }else {
+                gd.setSatisfaction(gradeMapper.getGrade(keyword,gd.getCompkey()).getSatisfaction());
+            }
             data.add(gd);
         }
         return data;
     }
 
-    public void addGrade(String compword, float grade){
-
+    public void addGrade(Hunhe hunhe, float grade){
+        gradeMapper.addGrace(hunhe,grade);
     }
 }

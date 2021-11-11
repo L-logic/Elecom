@@ -2,16 +2,17 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.csu.electriccommerce.persistence.GradeMapper">
 
-    <select id="getgrade" parameterType="String" resultType="FLOAT">
-    SELECT avg(cpgrade)
+    <select id="getGrade" parameterType="String" resultType="org.csu.electriccommerce.entity.Grade">
+    SELECT avg(cpgrade) AS satisfaction
     FROM grade
-    where compword = #{compword}
+    where keyword = #{keyword}
+    AND compkey = #{compkey}
     </select>
 
-    <insert id="addGrace" parameterType="String">
+    <insert id="addGrace" parameterType="org.csu.electriccommerce.entity.Hunhe" >
         INSERT INTO grade
-        (compword,cpgrade)
+        (keyword,compkey,cpgrade)
         VALUES
-        (#{compword},#{grade})
+        (#{keyword},#{compkey},#{grade})
     </insert>
 </mapper>

@@ -65,11 +65,6 @@ class ElectriccommerceApplicationTests {
     }
 
     @Test
-    void a(){
-        float a = gradeMapper.getgrade("牛奶");
-        System.out.println(a);
-    }
-    @Test
     void Test2(){
         Rate rate = new Rate();
         rate.setCode(0);

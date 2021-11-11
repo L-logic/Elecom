@@ -28,7 +28,7 @@ public class MainController {
 
     @Autowired
     private MainService mainService;
-    private GradeService gradeService;
+
     //新增种子关键字
     @RequestMapping("/addKeyword")
     public String addKeyword(
@@ -149,19 +149,4 @@ public class MainController {
         return "index";
     }
 
-    @RequestMapping("/addgrade")
-    public void addgrade(@RequestParam("value") float value , Model model ){
-
-    }
-
-    @RequestMapping("/setgrade")
-    @ResponseBody
-    public Rate setgrade(){
-        Rate rate = new Rate();
-        rate.setCode(0);
-        ArrayList<Grade> data = gradeService.getRateData("宝宝");
-        rate.setData(data);
-        rate.setCount(data.size());
-        return rate;
-    }
 }
