@@ -13,6 +13,6 @@
         INSERT INTO grade
         (keyword,compkey,cpgrade)
         VALUES
-        (#{keyword},#{compkey},#{grade})
+        (#{keyword},#{compkey},#{grade,javaType=FLOAT,jdbcType=FLOAT})
     </insert>
 </mapper>
