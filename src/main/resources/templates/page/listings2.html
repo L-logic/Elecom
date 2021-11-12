@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thyneleaf.org">
+<head>
+    <title>CompetitiveKeywords</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../staticfonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="../../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/css/magnific-popup.css">
+    <link rel="stylesheet" href="../../static/css/jquery-ui.css">
+    <link rel="stylesheet" href="../../static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../../static/css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="../../static/css/bootstrap-datepicker.css">
+
+    <link rel="stylesheet" href="../../static/fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="../../static/css/aos.css">
+    <link rel="stylesheet" href="../../static/css/rangeslider.css">
+
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/component/pear/css/pear.css" />
+
+</head>
+<body>
+
+<div class="site-wrap">
+
+    <div class="site-mobile-menu">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close mt-3">
+                <span class="icon-close2 js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <header class="site-navbar" role="banner">
+
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="../index.html" class="text-white h2 mb-0">竞争关键字</a></h1>
+                    <h5 style="color: white">推荐</h5>
+                </div>
+                <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+
+                        <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
+                            <li class="active"><a href="../index.html"><span>主页</span></a></li>
+                            <li><a href="introduction.html"><span>算法介绍</span></a></li>
+                            <li><a href="table.html"><span>数据分析</span></a></li>
+                            <li><a href="contact.html"><span>联系我们</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+
+                <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
+
+            </div>
+
+        </div>
+    </header>
+</div>
+
+
+
+
+
+<div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(../../static/images/background3.png);" data-aos="fade" data-stellar-background-ratio="0.5">
+    <div class="container">
+        <div class="row align-items-center justify-content-center text-center">
+
+            <div class="col-md-10" data-aos="fade-up" data-aos-delay="400">
+
+
+                <div class="row justify-content-center">
+                    <div class="col-md-8 text-center">
+                        <h1><th:block th:text="${keyword.keyword}" /></h1>
+                        <p data-aos="fade-up" data-aos-delay="100"><a th:href="${'/grade/goTable?word='}+${keyword.keyword}" style="color: #2d9292">要获得详细的图表分析？请点击这里:)</a></p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="site-section">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-7 text-center">
+                <h2 class="font-weight-light text-primary">The Seed Keyword You Search</h2>
+                <p class="color-black-opacity-5">Click on the card below to get the data analysis results corresponding to the seed keyword you searched</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <a href="table.html"></a>
+            <div class="col-md-6 mb-4 mb-lg-0 col-lg-4">
+                <a href="table.html">
+                    <div class="how-it-work-step">
+                        <div class="img-wrap">
+                            <img src="../../static/images/poem1.png" class="img-fluid" style="border-radius:10px">
+                        </div>
+                        <span class="number">1</span>
+                        <h3 align="center">怀孕</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 mb-4 mb-lg-0 col-lg-4">
+                <a href="table.html">
+                    <div class="how-it-work-step">
+                        <div class="img-wrap">
+                            <img src="../../static/images/poem2.png" class="img-fluid" style="border-radius:10px">
+                        </div>
+                        <span class="number">2</span>
+                        <h3 align="center">怀孕</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 mb-4 mb-lg-0 col-lg-4">
+                <div class="how-it-work-step">
+                    <div class="img-wrap">
+                        <img src="../../static/images/poem3.png" alt="Free website template by Free-Template.co" class="img-fluid" style="border-radius:10px">
+                    </div>
+                    <span class="number">3</span>
+                    <h3>Explore Amazing Places</h3>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4 mb-lg-0 col-lg-4">
+                <div class="how-it-work-step">
+                    <div class="img-wrap">
+                        <img src="../../static/images/poem4.png" alt="Free website template by Free-Template.co" class="img-fluid" style="border-radius:10px">
+                    </div>
+                    <span class="number">1</span>
+                    <h3>Decide What To Do</h3>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4 mb-lg-0 col-lg-4">
+                <div class="how-it-work-step">
+                    <div class="img-wrap">
+                        <img src="../../static/images/poem5.png" alt="Free website template by Free-Template.co" class="img-fluid" style="border-radius:10px">
+                    </div>
+                    <span class="number">2</span>
+                    <h3>Find What You Want</h3>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4 mb-lg-0 col-lg-4">
+                <div class="how-it-work-step">
+                    <div class="img-wrap">
+                        <img src="../../static/images/poem6.png" alt="Free website template by Free-Template.co" class="img-fluid" style="border-radius:10px">
+                    </div>
+                    <span class="number">3</span>
+                    <h3>Explore Amazing Places</h3>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4 mb-lg-0 col-lg-4">
+                <div class="how-it-work-step">
+                    <div class="img-wrap">
+                        <img src="../../static/images/poem7.png" alt="Free website template by Free-Template.co" class="img-fluid" style="border-radius:10px">
+                    </div>
+                    <span class="number">1</span>
+                    <h3>Decide What To Do</h3>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4 mb-lg-0 col-lg-4">
+                <div class="how-it-work-step">
+                    <div class="img-wrap">
+                        <img src="../../static/images/poem8.png" alt="Free website template by Free-Template.co" class="img-fluid" style="border-radius:10px">
+                    </div>
+                    <span class="number">2</span>
+                    <h3>Find What You Want</h3>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4 mb-lg-0 col-lg-4">
+                <div class="how-it-work-step">
+                    <div class="img-wrap">
+                        <img src="../../static/images/poem9.png" alt="Free website template by Free-Template.co" class="img-fluid" style="border-radius:10px">
+                    </div>
+                    <span class="number">3</span>
+                    <h3>Explore Amazing Places</h3>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4 mb-lg-0 col-lg-4">
+                <div class="how-it-work-step">
+                    <div class="img-wrap">
+                        <img src="../../static/images/poem10.png" alt="Free website template by Free-Template.co" class="img-fluid" style="border-radius:10px">
+                    </div>
+                    <span class="number">1</span>
+                    <h3>Decide What To Do</h3>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4 mb-lg-0 col-lg-4" style="margin: 10px">
+                <div class="how-it-work-step">
+                    <div class="img-wrap">
+                        <img src="../../static/images/poem11.png" alt="Free website template by Free-Template.co" class="img-fluid" style="border-radius:10px">
+                    </div>
+                    <span class="number">2</span>
+                    <h3>Find What You Want</h3>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="site-section">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-7 text-center border-primary">
+                <h2 class="font-weight-light text-primary">Popular Categories</h2>
+                <p class="color-black-opacity-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            </div>
+        </div>
+
+        <div class="row align-items-stretch">
+            <div class="col-6 col-sm-6 col-md-4 mb-4 mb-lg-0 col-lg-2">
+                <a href="#" class="popular-category h-100">
+                    <span class="icon mb-3"><span class="flaticon-hotel"></span></span>
+                    <span class="caption mb-2 d-block">Hotels</span>
+                    <span class="number">4,89</span>
+                </a>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4 mb-lg-0 col-lg-2">
+                <a href="#" class="popular-category h-100">
+                    <span class="icon mb-3"><span class="flaticon-microphone"></span></span>
+                    <span class="caption mb-2 d-block">Events</span>
+                    <span class="number">482</span>
+                </a>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4 mb-lg-0 col-lg-2">
+                <a href="#" class="popular-category h-100">
+                    <span class="icon mb-3"><span class="flaticon-flower"></span></span>
+                    <span class="caption mb-2 d-block">Spa</span>
+                    <span class="number">194</span>
+                </a>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4 mb-lg-0 col-lg-2">
+                <a href="#" class="popular-category h-100">
+                    <span class="icon mb-3"><span class="flaticon-restaurant"></span></span>
+                    <span class="caption mb-2 d-block">Stores</span>
+                    <span class="number">1,472</span>
+                </a>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4 mb-lg-0 col-lg-2">
+                <a href="#" class="popular-category h-100">
+                    <span class="icon mb-3"><span class="flaticon-cutlery"></span></span>
+                    <span class="caption mb-2 d-block">Restaurants</span>
+                    <span class="number">439</span>
+                </a>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 mb-4 mb-lg-0 col-lg-2">
+                <a href="#" class="popular-category h-100">
+                    <span class="icon mb-3"><span class="flaticon-bike"></span></span>
+                    <span class="caption mb-2 d-block">Other</span>
+                    <span class="number">692</span>
+                </a>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<div class="py-5 bg-primary">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 mr-auto mb-4 mb-lg-0">
+                <h2 class="mb-3 mt-0 text-white">Let's get started. Create your account</h2>
+                <p class="mb-0 text-white">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            </div>
+            <div class="col-lg-4">
+                <p class="mb-0"><a href="signup.html" class="btn btn-outline-white text-white btn-md px-5 font-weight-bold btn-md-block">Sign Up</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-6 mb-5 mb-lg-0 col-lg-3">
+                        <h2 class="footer-heading mb-4">Quick Links</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 mb-5 mb-lg-0 col-lg-3">
+                        <h2 class="footer-heading mb-4">Products</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 mb-5 mb-lg-0 col-lg-3">
+                        <h2 class="footer-heading mb-4">Features</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 mb-5 mb-lg-0 col-lg-3">
+                        <h2 class="footer-heading mb-4">Follow Us</h2>
+                        <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+                        <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+                        <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                        <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <h2 class="footer-heading mb-4">Subscribe Newsletter</h2>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <form action="#" method="post">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary text-white" type="button" id="button-addon2">Send</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row pt-5 mt-5">
+            <div class="col-12 text-md-center text-left">
+                <p>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright ©<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">汤臣一品电子商务小组</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script src="../../static/js/jquery-3.3.1.min.js"></script>
+<script src="../../static/js/jquery-migrate-3.0.1.min.js"></script>
+<script src="../../static/js/jquery-ui.js"></script>
+<script src="../../static/js/popper.min.js"></script>
+<script src="../../static/js/bootstrap.min.js"></script>
+<script src="../../static/js/owl.carousel.min.js"></script>
+<script src="../../static/js/jquery.stellar.min.js"></script>
+<script src="../../static/js/jquery.countdown.min.js"></script>
+<script src="../../static/js/jquery.magnific-popup.min.js"></script>
+<script src="../../static/js/bootstrap-datepicker.min.js"></script>
+<script src="../../static/js/aos.js"></script>
+<script src="../../static/js/rangeslider.min.js"></script>
+
+<script src="../../static/js/main.js"></script>
+<script src="../../static/component/layui/layui.js"></script>
+<script src="../../static/component/pear/pear.js"></script>
+<script src="../../static/script/line3.js"></script>
+<script src="../../static/script/column1.js"></script>
+<script src="../js/echart3.js"></script>
+<script src="../js/echarts-wordcloud.js"></script>
+<script>
+    layui.use(['table', 'form', 'jquery', 'drawer', 'dropdown','rate'], function() {
+        let table = layui.table,
+            layer = layui.layer,
+            rate  =layui.rate;
+        let form = layui.form;
+        let $ = layui.jquery;
+        let drawer = layui.drawer;
+        let dropdown = layui.dropdown;
+
+        let MODULE_PATH = "/system/user/";
+
+        let cols = [
+            [
+                {
+                    title: '序列',
+                    field: 'sequence',
+                    align: 'center',
+                    width: 80
+                },
+                {
+                    title: '竞争关键字',
+                    field: 'keyWord',
+                    align: 'center',
+                    width: 100
+                },
+                {
+                    title: '中介关键字',
+                    field: 'midKey',
+                    align: 'center'
+                },
+                {
+                    title: '竞争度',
+                    field: 'competitive',
+                    align: 'center',
+                },
+                {
+                    title: '满意度',
+                    field: 'satisfaction',
+                    align: 'center',
+                    sort:true,
+                    id:'rate',
+                    templet: function (d) {
+                        //在设置星级的列中用templet函数转义，其中d.id代表该行的id值.第一行的评分的id=start1，第二行的评分的id=star2.....用在后面循环赋值。很重要！
+                        return '<div id="star'+d.sequence+'" style="font-size: 30px;alignment: center"></div>'
+                    }
+                }
+            ]
+        ]
+
+        //修改这里的url可以传后台数据
+        table.render({
+            elem: '#test',//注意这个值
+            id:"AnswerReload",//table的id值
+            url: '../../static/admin/data/table.json',
+            // where: { question_id: question_id,//请求参数 }
+            // method: 'post',//请求方式
+            // contentType: "application/json;charset=utf-8",//数据类型
+            // url: 'http://192.168.*.*:8000/******/',//后台数据接口
+            // // toolbar: '#toolbarDemo',
+            // jump: function(obj){
+            //     console.log(obj)
+            // },
+            cols:cols,
+            //回调函数，在里面设置rate.render(),给rate循环赋值
+            even:true,//隔行变色
+            done:function(res){
+                var data = res.data;//返回的json中data数据
+                var that = this.elem.next();
+                table_data = data;//全局变量，用在后面排序，与这个循环无关。
+                for (var item in data) {
+                    //星级
+                    rate.render({//循环设置评分
+                        elem: '#star'+data[item].sequence+''//给不同的id的rate绑定不同的值
+                        , length: 5            //星星个数
+                        , value: data[item].satisfaction      //初始化值
+                        , theme: '#009688'     //颜色
+                        , half: true           //支持半颗星
+                        , text: false           //显示文本，默认显示 '3.5星'
+                        // , readonly: true      //只读
+                    });
+                };
+                $('th').css({'background-color':'#00918e','color':'#000000','font-weight':'bold','font-size':'20px'})
+            }
+        });
+
+        table.on('tool(tableList)', function (obj) {
+            var data = obj.data; //获得当前行数据
+            var layEvent = obj.event; //获得 lay-event 对应的值
+            var tr = obj.tr; //获得当前行 tr 的DOM对象
+            if (layEvent == 'detail') {
+                common.cmsLayOpen('查看', "/Page.aspx?Id=" + data.Id, '100%', '100%'); //点击某一列打开新的页面
+            }
+        });
+
+        window.refresh = function(param) {
+            table.reload('user-table');
+        }
+    })
+</script>
+
+<script>
+    var myChart = echarts3.init(document.getElementById('wordcloud_echarts'));
+    var keywords = [
+        {"name":"软件工程","value":12.64},
+        {"name":"中南大学","value":24.03},
+        {"name":"长沙","value":24.95},
+        {"name":"湖南","value":8.04},
+        {"name":"学习","value":15.27},
+        {"name":"大学生","value":5.80},
+        {"name":"初恋","value":3.09},
+        {"name":"英俊潇洒","value":4.71},
+        {"name":"担当","value":8.33},
+        {"name":"论文","value":6.55},
+        {"name":"改进","value":4.88},
+        {"name":"青春","value":18.04},
+        {"name":"网红","value":5.87},
+        {"name":"美容","value":6.97},
+        {"name":"认真","value":12.53},
+        {"name":"喜欢","value":12.49},
+        {"name":"00后","value":23.91},
+        {"name":"梗","value":13.25},
+        {"name":"可爱","value":9.93},
+        {"name":"诙谐","value":3.65},
+        {"name":"软件工程","value":12.64},
+        {"name":"中南大学","value":24.03},
+        {"name":"长沙","value":24.95},
+        {"name":"湖南","value":8.04},
+        {"name":"学习","value":15.27},
+        {"name":"大学生","value":5.80},
+        {"name":"初恋","value":3.09},
+        {"name":"英俊潇洒","value":4.71},
+        {"name":"担当","value":8.33},
+        {"name":"论文","value":6.55},
+        {"name":"改进","value":4.88},
+        {"name":"青春","value":18.04},
+        {"name":"网红","value":5.87},
+        {"name":"美容","value":6.97},
+        {"name":"认真","value":12.53},
+        {"name":"喜欢","value":12.49},
+        {"name":"00后","value":23.91},
+        {"name":"梗","value":13.25},
+        {"name":"可爱","value":9.93},
+        {"name":"诙谐","value":3.65}]
+    var option = {
+        series: [{
+            type: 'wordCloud',
+            sizeRange: [15, 80],
+            rotationRange: [0, 0],
+            rotationStep: 45,
+            gridSize: 8,
+            shape: 'smooth',
+            width: '100%',
+            height: '100%',
+            textStyle: {
+                normal: {
+                    fontFamily: 'sans-serif',
+                    //fontWeight: 'bold',
+                    // Color can be a callback function or a color string
+                    color: function () {
+                        // Random color
+                        return 'rgb(' + [
+                            Math.round(Math.random() * 160),
+                            Math.round(Math.random() * 160),
+                            Math.round(Math.random() * 160)
+                        ].join(',') + ')';//字体的随机颜色
+                    }
+                },
+                emphasis: {//鼠标移入的特效样式
+                    shadowBlur: 10,
+                    shadowColor: '#d1e5fd'
+                }
+            },
+            data: keywords
+        }]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+    window.addEventListener("resize", function() {
+        myChart.resize();
+    });
+</script>
+
+</body>
+</html>
