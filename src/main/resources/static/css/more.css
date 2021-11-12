@@ -38,3 +38,32 @@
 .radio input[type="radio"] + .radio-label:empty:before {
     margin-right: 0;
 }
+.hr-double-arrow {
+    color: #00918e;
+    border: double;
+    border-width: 3px 5px;
+    border-color: #00918e transparent;
+    height: 1px;
+    overflow: visible;
+    margin-left: 20px;
+    margin-right: 20px;
+    position: relative;
+}
+.hr-double-arrow:before,
+.hr-double-arrow:after {
+    content: '';
+    position: absolute;
+    width: 5px; height: 5px;
+    border-width: 0 3px 3px 0;
+    border-style: double;
+    top: -3px;
+    background: radial-gradient(2px at 1px 1px, currentColor 2px, transparent 0) no-repeat;
+}
+.hr-double-arrow:before {
+    transform: rotate(-45deg);
+    left: -20px;
+}
+.hr-double-arrow:after {
+    transform: rotate(135deg);
+    right: -20px;
+}
