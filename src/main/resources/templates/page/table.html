@@ -437,47 +437,27 @@
 </script>
 <script>
     var myChart = echarts3.init(document.getElementById('wordcloud_echarts'));
-    var keywords = [
-        {"name":"软件工程","value":12.64},
-        {"name":"中南大学","value":24.03},
-        {"name":"长沙","value":24.95},
-        {"name":"湖南","value":8.04},
-        {"name":"学习","value":15.27},
-        {"name":"大学生","value":5.80},
-        {"name":"初恋","value":3.09},
-        {"name":"英俊潇洒","value":4.71},
-        {"name":"担当","value":8.33},
-        {"name":"论文","value":6.55},
-        {"name":"改进","value":4.88},
-        {"name":"青春","value":18.04},
-        {"name":"网红","value":5.87},
-        {"name":"美容","value":6.97},
-        {"name":"认真","value":12.53},
-        {"name":"喜欢","value":12.49},
-        {"name":"00后","value":23.91},
-        {"name":"梗","value":13.25},
-        {"name":"可爱","value":9.93},
-        {"name":"诙谐","value":3.65},
-        {"name":"软件工程","value":12.64},
-        {"name":"中南大学","value":24.03},
-        {"name":"长沙","value":24.95},
-        {"name":"湖南","value":8.04},
-        {"name":"学习","value":15.27},
-        {"name":"大学生","value":5.80},
-        {"name":"初恋","value":3.09},
-        {"name":"英俊潇洒","value":4.71},
-        {"name":"担当","value":8.33},
-        {"name":"论文","value":6.55},
-        {"name":"改进","value":4.88},
-        {"name":"青春","value":18.04},
-        {"name":"网红","value":5.87},
-        {"name":"美容","value":6.97},
-        {"name":"认真","value":12.53},
-        {"name":"喜欢","value":12.49},
-        {"name":"00后","value":23.91},
-        {"name":"梗","value":13.25},
-        {"name":"可爱","value":9.93},
-        {"name":"诙谐","value":3.65}]
+    var word = document.getElementById('zhang').innerText;
+    var keywords = [];
+    $.ajax({
+        type: 'post',
+        async : false,
+        data:{
+            word: word
+        },
+        url: 'http://localhost:8888/cloud/getCloud',//请求数据的地址
+        dataType: "json",        //返回数据形式为json
+        success: function (result) {
+            console.log("yyyyyyyyyyyyyyyyyy");
+            console.log(result)
+            keywords = result;
+        },
+        error: function (errorMsg) {
+            //请求失败时执行该函数
+            alert("图表请求数据失败!");
+            echarts.hideLoading();
+        }
+    });
     var option = {
         series: [{
             type: 'wordCloud',
