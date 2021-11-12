@@ -13,11 +13,16 @@
         $("#adddd").bind('click',function (){
           console.log("hhhhhhhh")
           count++
-          var son = $("<div class=\"col-lg-12 col-xl-4 no-sm-border border-right\" style=\"margin-left: 14%;width: 40%\">\n" +
+          var son = $("<div class=\"row align-items-center\"></div>")
+          var son2 = $("<div id=\"before\" class=\"col-lg-4 col-xl-4  no-sm-border border-right\" style=\"margin-left: 15%;\">\n" +
                   "                    </div>")
           var sonson = $("<input type=\"text\" class=\"form-control\" placeholder=\"请在此输入关键字\">")
+
           sonson.attr("name","aword"+count)
-          son.append(sonson)
+          son2.append(sonson)
+          son.append(son2)
+          var after = $("<div class=\"col-lg-12 col-xl-3\"></div>")
+          son.after(after)
           $form.prepend(son)
         })
         // $("#tijiao").bind('click',function () {
@@ -174,7 +179,7 @@
             <div class="collapse show" id="collapse-1">
               <div class="pt-2">
                 <button id="adddd" class="btn text-white btn-primary">新增</button>
-                <form action="/main/addAllKeyword" id="father" method="get">
+                <form action="/main/addAllKeyword" method="get" id="father">
                   <div class="row align-items-center">
                     <div class="col-lg-12 col-xl-4 no-sm-border border-right" style="margin-left: 15%">
                       <input type="text" class="form-control" placeholder="请在此输入关键字" name="aword">
@@ -464,7 +469,7 @@
   <script src="../static/js/rangeslider.min.js"></script>
   
 
-  <script src="js/typed.js"></script>
+  <script src="../static/js/typed.js"></script>
             <script>
             var typed = new Typed('.typed-words', {
             strings: ["Attractions"," Events"," Hotels", " Restaurants"],
