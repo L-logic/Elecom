@@ -114,8 +114,8 @@
 <!--            </div>-->
 <!--        </div>-->
 
-        <div class="row">
-            <div class="col-md-6 mb-4 mb-lg-0 col-lg-12" th:each="keyword,itemIndex:${keywordArrayList}">
+        <div class="row" th:each="keyword,itemIndex:${keywordArrayList}">
+            <div class="col-md-6 mb-4 mb-lg-0 col-lg-12" style="margin: 3%">
                 <div class="col-lg-4" style="float:left;">
                     <a th:href="${'/grade/goTable?word='}+${keyword.keyword}">
                         <div class="how-it-work-step">
@@ -123,36 +123,34 @@
                                 <img th:src="'../images/poem'+ ${itemIndex.index+1} +'.png'" class="img-fluid" style="border-radius:10px">
                             </div>
                             <span class="number" th:text="${itemIndex.index+1}">1</span>
-                            <h3 align="center" th:text="${keyword.keyword}">怀孕</h3>
                         </div>
                     </a>
                 </div>
                 <div class="col-lg-8" style="float:left;">
                     <div class="how-it-work-step">
-                        <p align="left" style="line-height: 2;font-size: 20px;margin-top: 10px;">您搜索的种子关键字：怀孕</p>
-                        <p align="left" style="line-height: 2;font-size: 16px;margin-top: 10px;">竞争关键字概览：</p>
+                        <p align="left" style="line-height: 2;font-size: 20px;margin-top: 10px;color: #00918e;font-weight: bold">您搜索的种子关键字：<th:block th:text="${keyword.keyword}"/></p>
+                        <p align="left" style="line-height: 2;font-size: 16px;margin-top: 3%;">竞争关键字概览：</p>
                         <table class="layui-table" align="left">
                             <tr>
-                                <td>宝宝</td>
-                                <td>宝宝</td>
-                                <td>宝宝</td>
-                                <td>宝宝</td>
-                                <td>宝宝</td>
-                                <td>宝宝</td>
-                                <td>宝宝</td>
-                                <td>宝宝</td>
-                                <td>宝宝</td>
-                                <td>宝宝</td>
+                                <td th:text="${keyword.compkey[0]}">宝宝</td>
+                                <td th:text="${keyword.compkey[1]}">宝宝</td>
+                                <td th:text="${keyword.compkey[2]}">宝宝</td>
+                                <td th:text="${keyword.compkey[3]}">宝宝</td>
+                                <td th:text="${keyword.compkey[4]}">宝宝</td>
+                                <td th:text="${keyword.compkey[5]}">宝宝</td>
+                                <td th:text="${keyword.compkey[6]}">宝宝</td>
+                                <td th:text="${keyword.compkey[7]}">宝宝</td>
+                                <td th:text="${keyword.compkey[8]}">宝宝</td>
+                                <td th:text="${keyword.compkey[9]}">宝宝</td>
                             </tr>
                         </table>
                         <hr class="hr-double-arrow"/>
-                        <p class="color-black-opacity-5" align="left" style="line-height: 2;font-size: 16px;margin-top: 10px;">
-                            <!--                            <a th:href="${'/grade/goTable?word='}+${keyword.keyword}">Get more information?Please click here!</a>-->
+                        <p align="left" style="line-height: 2;font-size: 16px;margin-top: 5%;display: block">
+                            <a th:href="${'/grade/goTable?word='}+${keyword.keyword}" style="color: #999999">Get more information?Please click here!</a>
                         </p>
                     </div>
                 </div>
             </div>
-        </div>
     </div>
 </div>
 
