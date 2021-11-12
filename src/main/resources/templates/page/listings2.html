@@ -7,23 +7,23 @@
 
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
 
-    <link rel="stylesheet" href="../../staticfonts/icomoon/style.css">
+    <link rel="stylesheet" href="../fonts/icomoon/style.css">
 
-    <link rel="stylesheet" href="../../static/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../static/css/magnific-popup.css">
-    <link rel="stylesheet" href="../../static/css/jquery-ui.css">
-    <link rel="stylesheet" href="../../static/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="../../static/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../css/owl.theme.default.min.css">
 
-    <link rel="stylesheet" href="../../static/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="../css/bootstrap-datepicker.css">
 
-    <link rel="stylesheet" href="../../static/fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="../fonts/flaticon/font/flaticon.css">
 
-    <link rel="stylesheet" href="../../static/css/aos.css">
-    <link rel="stylesheet" href="../../static/css/rangeslider.css">
+    <link rel="stylesheet" href="../css/aos.css">
+    <link rel="stylesheet" href="../css/rangeslider.css">
 
-    <link rel="stylesheet" href="../../static/css/style.css">
-    <link rel="stylesheet" href="../../static/component/pear/css/pear.css" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../component/pear/css/pear.css" />
 
 </head>
 <body>
@@ -73,15 +73,14 @@
 
 
 
-<div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(../../static/images/background3.png);" data-aos="fade" data-stellar-background-ratio="0.5">
+<div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(../images/background3.png);" data-aos="fade" data-stellar-background-ratio="0.5">
     <div class="container">
         <div class="row align-items-center justify-content-center text-center">
 
             <div class="col-md-10" data-aos="fade-up" data-aos-delay="400">
                 <div class="row justify-content-center">
-                    <div class="col-md-8 text-center">
-                        <h1><th:block th:text="${keyword.keyword}" /></h1>
-                        <p data-aos="fade-up" data-aos-delay="100"><a th:href="${'/grade/goTable?word='}+${keyword.keyword}" style="color: #2d9292">要获得详细的图表分析？请点击这里:)</a></p>
+                    <div class="col-md-8 text-center" th:each="keyword:${keywordArrayList}">
+                        <h1 style="display: inline-block"><th:block th:text="${keyword.keyword}" /></h1>
                     </div>
                 </div>
             </div>
@@ -99,135 +98,14 @@
 
         <div class="row">
             <a href="table.html"></a>
-            <div class="col-md-6 mb-4 mb-lg-0 col-lg-4">
-                <a href="table.html">
+            <div class="col-md-6 mb-4 mb-lg-0 col-lg-4" th:each="keyword,itemIndex:${keywordArrayList}">
+                <a th:href="${'/grade/goTable?word='}+${keyword.keyword}">
                     <div class="how-it-work-step">
                         <div class="img-wrap">
-                            <img src="../../static/images/poem1.png" class="img-fluid" style="border-radius:10px">
+                            <img th:src="'../images/poem'+ ${itemIndex.index+1} +'.png'" class="img-fluid" style="border-radius:10px">
                         </div>
-                        <span class="number">1</span>
-                        <h3 align="center">怀孕</h3>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-6 mb-4 mb-lg-0 col-lg-4">
-                <a href="table.html">
-                    <div class="how-it-work-step">
-                        <div class="img-wrap">
-                            <img src="../../static/images/poem2.png" class="img-fluid" style="border-radius:10px">
-                        </div>
-                        <span class="number">2</span>
-                        <h3 align="center">怀孕</h3>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-6 mb-4 mb-lg-0 col-lg-4">
-                <a href="table.html">
-                    <div class="how-it-work-step">
-                        <div class="img-wrap">
-                            <img src="../../static/images/poem3.png" class="img-fluid" style="border-radius:10px">
-                        </div>
-                        <span class="number">3</span>
-                        <h3 align="center">怀孕</h3>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-6 mb-4 mb-lg-0 col-lg-4">
-                <a href="table.html">
-                    <div class="how-it-work-step">
-                        <div class="img-wrap">
-                            <img src="../../static/images/poem4.png" class="img-fluid" style="border-radius:10px">
-                        </div>
-                        <span class="number">4</span>
-                        <h3 align="center">怀孕</h3>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-6 mb-4 mb-lg-0 col-lg-4">
-                <a href="table.html">
-                    <div class="how-it-work-step">
-                        <div class="img-wrap">
-                            <img src="../../static/images/poem5.png" class="img-fluid" style="border-radius:10px">
-                        </div>
-                        <span class="number">5</span>
-                        <h3 align="center">怀孕</h3>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-6 mb-4 mb-lg-0 col-lg-4">
-                <a href="table.html">
-                    <div class="how-it-work-step">
-                        <div class="img-wrap">
-                            <img src="../../static/images/poem6.png" class="img-fluid" style="border-radius:10px">
-                        </div>
-                        <span class="number">6</span>
-                        <h3 align="center">怀孕</h3>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-6 mb-4 mb-lg-0 col-lg-4">
-                <a href="table.html">
-                    <div class="how-it-work-step">
-                        <div class="img-wrap">
-                            <img src="../../static/images/poem7.png" class="img-fluid" style="border-radius:10px">
-                        </div>
-                        <span class="number">7</span>
-                        <h3 align="center">怀孕</h3>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-6 mb-4 mb-lg-0 col-lg-4">
-                <a href="table.html">
-                    <div class="how-it-work-step">
-                        <div class="img-wrap">
-                            <img src="../../static/images/poem8.png" class="img-fluid" style="border-radius:10px">
-                        </div>
-                        <span class="number">8</span>
-                        <h3 align="center">怀孕</h3>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-6 mb-4 mb-lg-0 col-lg-4">
-                <a href="table.html">
-                    <div class="how-it-work-step">
-                        <div class="img-wrap">
-                            <img src="../../static/images/poem9.png" class="img-fluid" style="border-radius:10px">
-                        </div>
-                        <span class="number">9</span>
-                        <h3 align="center">怀孕</h3>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-6 mb-4 mb-lg-0 col-lg-4">
-                <a href="table.html">
-                    <div class="how-it-work-step">
-                        <div class="img-wrap">
-                            <img src="../../static/images/poem10.png" class="img-fluid" style="border-radius:10px">
-                        </div>
-                        <span class="number">10</span>
-                        <h3 align="center">怀孕</h3>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-6 mb-4 mb-lg-0 col-lg-4" style="margin-top: 10px">
-                <a href="table.html">
-                    <div class="how-it-work-step">
-                        <div class="img-wrap">
-                            <img src="../../static/images/poem11.png" class="img-fluid" style="border-radius:10px">
-                        </div>
-                        <span class="number">11</span>
-                        <h3 align="center">怀孕</h3>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-6 mb-4 mb-lg-0 col-lg-4" style="margin-top: 10px">
-                <a href="table.html">
-                    <div class="how-it-work-step">
-                        <div class="img-wrap">
-                            <img src="../../static/images/poem12.png" class="img-fluid" style="border-radius:10px">
-                        </div>
-                        <span class="number">12</span>
-                        <h3 align="center">怀孕</h3>
+                        <span class="number" th:text="${itemIndex.index+1}">1</span>
+                        <h3 align="center" th:text="${keyword.keyword}">怀孕</h3>
                     </div>
                 </a>
             </div>
@@ -375,24 +253,24 @@
 </footer>
 
 
-<script src="../../static/js/jquery-3.3.1.min.js"></script>
-<script src="../../static/js/jquery-migrate-3.0.1.min.js"></script>
-<script src="../../static/js/jquery-ui.js"></script>
-<script src="../../static/js/popper.min.js"></script>
-<script src="../../static/js/bootstrap.min.js"></script>
-<script src="../../static/js/owl.carousel.min.js"></script>
-<script src="../../static/js/jquery.stellar.min.js"></script>
-<script src="../../static/js/jquery.countdown.min.js"></script>
-<script src="../../static/js/jquery.magnific-popup.min.js"></script>
-<script src="../../static/js/bootstrap-datepicker.min.js"></script>
-<script src="../../static/js/aos.js"></script>
-<script src="../../static/js/rangeslider.min.js"></script>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/jquery-migrate-3.0.1.min.js"></script>
+<script src="../js/jquery-ui.js"></script>
+<script src="../js/popper.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/owl.carousel.min.js"></script>
+<script src="../js/jquery.stellar.min.js"></script>
+<script src="../js/jquery.countdown.min.js"></script>
+<script src="../js/jquery.magnific-popup.min.js"></script>
+<script src="../js/bootstrap-datepicker.min.js"></script>
+<script src="../js/aos.js"></script>
+<script src="../js/rangeslider.min.js"></script>
 
-<script src="../../static/js/main.js"></script>
-<script src="../../static/component/layui/layui.js"></script>
-<script src="../../static/component/pear/pear.js"></script>
-<script src="../../static/script/line3.js"></script>
-<script src="../../static/script/column1.js"></script>
+<script src="../js/main.js"></script>
+<script src="../component/layui/layui.js"></script>
+<script src="../component/pear/pear.js"></script>
+<script src="../script/line3.js"></script>
+<script src="../script/column1.js"></script>
 <script src="../js/echart3.js"></script>
 <script src="../js/echarts-wordcloud.js"></script>
 <script>
@@ -449,7 +327,7 @@
         table.render({
             elem: '#test',//注意这个值
             id:"AnswerReload",//table的id值
-            url: '../../static/admin/data/table.json',
+            url: '../admin/data/table.json',
             // where: { question_id: question_id,//请求参数 }
             // method: 'post',//请求方式
             // contentType: "application/json;charset=utf-8",//数据类型

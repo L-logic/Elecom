@@ -176,7 +176,7 @@ public class MainController {
         System.out.println(keywordArrayList);
 
         model.addAttribute("keywordArrayList",keywordArrayList);
-        return "index";
+        return "page/listings2";
     }
 
 }
