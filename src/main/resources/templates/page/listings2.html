@@ -96,26 +96,26 @@
                 <p class="color-black-opacity-5">Click on the card below to get the data analysis results corresponding to the seed keyword you searched</p>
             </div>
         </div>
-        <div class="row">
-            <a href="table.html"></a>
-            <div class="col-md-6 mb-4 mb-lg-0 col-lg-4" th:each="keyword,itemIndex:${keywordArrayList}" style="border:3px solid #2d9292; padding: 3% 1%;border-radius: 5%;margin: 8%;background-color: rgba(134,204,186,.3)">
-                <a th:href="${'/grade/goTable?word='}+${keyword.keyword}">
-                    <div class="how-it-work-step">
-                        <div class="img-wrap">
-                            <img th:src="'../images/poem'+ ${itemIndex.index+1} +'.png'" class="img-fluid" style="border-radius:10px">
-                        </div>
-                        <span class="number" th:text="${itemIndex.index+1}">1</span>
-                        <h3 align="center" th:text="${keyword.keyword}" style="color: #2d9292">怀孕</h3>
-                        <th class="col-md-6 mb-4 mb-lg-0 col-lg-4" th:each="item:${keyword.compkey}">
-                            <span th:text="${item}" style="color: #807f7f"></span>
-                        </th>
-                    </div>
-                </a>
-            </div>
-        </div>
+<!--        <div class="row">-->
+<!--            <a href="table.html"></a>-->
+<!--            <div class="col-md-6 mb-4 mb-lg-0 col-lg-4" th:each="keyword,itemIndex:${keywordArrayList}" style="border:3px solid #2d9292; padding: 3% 1%;border-radius: 5%;margin: 8%;background-color: rgba(134,204,186,.3)">-->
+<!--                <a th:href="${'/grade/goTable?word='}+${keyword.keyword}">-->
+<!--                    <div class="how-it-work-step">-->
+<!--                        <div class="img-wrap">-->
+<!--                            <img th:src="'../images/poem'+ ${itemIndex.index+1} +'.png'" class="img-fluid" style="border-radius:10px">-->
+<!--                        </div>-->
+<!--                        <span class="number" th:text="${itemIndex.index+1}">1</span>-->
+<!--                        <h3 align="center" th:text="${keyword.keyword}" style="color: #2d9292">怀孕</h3>-->
+<!--                        <th class="col-md-6 mb-4 mb-lg-0 col-lg-4" th:each="item:${keyword.compkey}">-->
+<!--                            <span th:text="${item}" style="color: #807f7f"></span>-->
+<!--                        </th>-->
+<!--                    </div>-->
+<!--                </a>-->
+<!--            </div>-->
+<!--        </div>-->
 
         <div class="row">
-            <div class="col-md-6 mb-4 mb-lg-0" th:each="keyword,itemIndex:${keywordArrayList}">
+            <div class="col-md-6 mb-4 mb-lg-0 col-lg-12" th:each="keyword,itemIndex:${keywordArrayList}">
                 <div class="col-lg-4" style="float:left;">
                     <a th:href="${'/grade/goTable?word='}+${keyword.keyword}">
                         <div class="how-it-work-step">
