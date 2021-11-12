@@ -34,7 +34,7 @@ public class CloudController {
         }
         for (int i = 0; i < arrayList.size(); i++) {
             Cloud cloud = new Cloud();
-            cloud.setName(arrayList.get(i).getCompkey());
+            cloud.setName(arrayList.get(i).getMidkey());
             cloud.setValue(arrayList.get(i).getCompPower()*40);
             clouds.add(cloud);
         }
@@ -46,7 +46,13 @@ public class CloudController {
         }
         for (int i = 0; i < arrayList.size(); i++) {
             Cloud cloud = new Cloud();
-            cloud.setName(arrayList.get(i).getCompkey());
+            cloud.setName(arrayList.get(i).getKeyword());
+            cloud.setValue(arrayList.get(i).getCompPower()*60);
+            clouds.add(cloud);
+        }
+        for (int i = 0; i < arrayList.size(); i++) {
+            Cloud cloud = new Cloud();
+            cloud.setName(arrayList.get(i).getMidkey());
             cloud.setValue(arrayList.get(i).getCompPower()*80);
             clouds.add(cloud);
         }
