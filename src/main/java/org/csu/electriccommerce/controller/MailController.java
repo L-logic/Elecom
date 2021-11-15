@@ -26,6 +26,9 @@ public class MailController {
         String content = request.getParameter("message");
         String from  = request.getParameter("email");
         String subject = request.getParameter("subject");
+        System.out.println(content);
+        System.out.println(from);
+        System.out.println(subject);
         mailService.sendMail(from,subject,content);
         return "page/contact";
     }

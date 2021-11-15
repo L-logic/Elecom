@@ -20,7 +20,7 @@ public class MailService {
     private JavaMailSender javaMailSender;
 
     @Value("${mail.fromMail.addr}")
-    private String to;
+    private String from;
 
     public static String myEmailAccount = "1633737877@qq.com";
     public static String myEmailPassword = "ugzpjrkwhucyfcbd";
@@ -29,14 +29,14 @@ public class MailService {
     /**
      * 发送简单邮件
      *
-     * @param from      发送者。邮件的发送者
+     * @param to      接受者。邮件的接受者
      * @param subject 主题。邮箱标题
      * @param content 内容。是邮箱的Text
      */
-    public void sendMail(String from, String subject, String content) {
+    public void sendMail(String to, String subject, String content) {
         SimpleMailMessage mailMessage = new SimpleMailMessage();
         mailMessage.setFrom(from);
-        mailMessage.setTo(myEmailAccount);//接受者
+        mailMessage.setTo(to);//接受者
         mailMessage.setSubject(subject);
         mailMessage.setText(content);
         try {
