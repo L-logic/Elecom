@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/link")
 public class LinkController {
 
-    @RequestMapping("/toIntroducation")
-    public String toIntroducation()
+    @RequestMapping("/toIntroduction")
+    public String toIntroduction()
     {
         return "page/introduction";
     }
